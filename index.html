@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manuel Rosa</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js"></script>
+    <script
+      src="https://kit.fontawesome.com/75b1d79bee.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "9JmTc-GfRoLgQ2oyI",
+      });
+   })();
+</script>
+  </head>
+
+  <div class="success">
+    <i class="fa-regular fa-circle-check success__icon"></i>
+    <div class="success__text">
+      <span class="success__text__title">Message Sent!</span>
+      <p class="success__text__para">Your message has been received. I'll get back to you soon!</p>
+    </div>
+  </div>
+
+  <body>
+    <nav class="nav">
+      <div class="nav__container">
+        <span class="nav__logo">Manuel Rosa</span>
+        <div class="nav__links">
+          <a href="#home" class="nav__link">Home</a>
+          <a href="#about" class="nav__link">About Me</a>
+          <a href="#projects" class="nav__link">Projects</a>
+          <a href="#contact" class="nav__link">
+            <button class="nav__link__button">Contact</button>
+          </a>
+        </div>
+        <button class="nav__menu" onclick="openMenu()">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+
+    <div class="menu__wrapper">
+      <nav class="menu">
+        <button class="menu__close" onclick="closeMenu()"><i class="fa-solid fa-x"></i></button>
+
+        <div class="menu__links">
+          <a href="#home" class="menu__link" onclick="closeMenu()">Home</a>
+          <a href="#about" class="menu__link" onclick="closeMenu()">About Me</a>
+          <a href="#projects" class="menu__link" onclick="closeMenu()">Projects</a>
+          <a href="#contact" class="menu__link" onclick="closeMenu()">
+          <button class="menu__link__button">Contact</button>
+        </a>
+        </div>
+      </nav>
+    </div>
+
+    <header id="home">
+      <svg
+        id="visual"
+        viewBox="0 0 1200 1300"
+        width="880"
+        height="1200"
+        xmlns="http://www.w3.org/2000/svg"
+        version="1.1"
+        class="blob blob-header"
+      >
+        <g transform="translate(927.4519875387796 -111.9512848530959)">
+          <path
+            d="M648.8 -752.4C919.6 -545.9 1272.3 -416.2 1356.5 -200.5C1440.7 15.3 1256.4 317.2 1074.3 608.8C892.3 900.4 712.4 1181.7 443.3 1327C174.2 1472.2 -184.1 1481.3 -364.5 1290.3C-544.9 1099.4 -547.4 708.5 -624.9 430.5C-702.4 152.5 -854.9 -12.6 -829.6 -144.5C-804.2 -276.4 -601 -375.2 -433.1 -599.8C-265.2 -824.3 -132.6 -1174.7 28.2 -1208.3C189 -1241.9 378 -958.8 648.8 -752.4"
+            fill="#000000"
+          ></path>
+        </g>
+      </svg>
+      <div class="container">
+        <div class="row header__row">
+          <span class="header__span">Hey, I'm</span>
+          <h1 class="header__title">Manuel Rosa</h1>
+          <h2 class="header__subtitle">Freelance Frontend Developer</h2>
+          <span class="header__about"
+            >Find out more <a href="#about" class="bold">about me.</a></span
+          >
+          <div class="header__links">
+            <a
+              href="https://www.linkedin.com/in/manuelrosajr/"
+              class="header__link"
+              target="_blank"
+            >
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a
+              href="https://github.com/mannyrosajr"
+              class="header__link"
+              target="_blank"
+            >
+              <i class="fa-brands fa-square-github"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/manuelrosajr/"
+              class="header__link"
+              target="_blank"
+            >
+              <i class="fa-solid fa-file-pdf"></i>
+            </a>
+          </div>
+          <a href="#about" class="header__scroll">
+            <i class="fa-solid fa-angle-down"></i>
+            <i class="fa-solid fa-angle-down"></i>
+            <i class="fa-solid fa-angle-down"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="about">
+        <div class="container">
+          <div class="row about__row">
+            <div class="about__content">
+              <div class="about__text">
+                <h3 class="about__text__title">About Me</h3>
+                <h4 class="about__text__subtitle">Manuel Rosa</h4>
+                <p class="about__text__para">
+                  I am a student at the
+                  <span class="bold">University of Cincinnati</span> studying
+                  <span class="bold">Information Systems</span> with a passion
+                  for full-stack development. I'm driven by curiosity,
+                  creativity, and a strong desire to build digital experiences
+                  that are both functional and engaging. My current focus is on
+                  web development, where I'm continuously expanding my skills in
+                  <span class="bold">HTML, CSS, JavaScript, and React</span>,
+                  with plans to dive deeper into AI and backend technologies.
+                  I'm always exploring new ways to grow as a developer and push
+                  the limits of what I can create.
+                </p>
+              </div>
+              <div class="about__skills">
+                <h3 class="about__title">My Skills</h3>
+                <div class="about__skill__wrapper">
+                  <figure class="about__skill">
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png"
+                      alt=""
+                      class="about__skill__img"
+                    />
+                    <span class="about__skill__name">HTML</span>
+                  </figure>
+                  <figure class="about__skill">
+                    <img
+                      src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png"
+                      alt=""
+                      class="about__skill__img"
+                    />
+                    <span class="about__skill__name">CSS</span>
+                  </figure>
+                  <figure class="about__skill">
+                    <img
+                      src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png"
+                      alt=""
+                      class="about__skill__img"
+                    />
+                    <span class="about__skill__name">JavaScript</span>
+                  </figure>
+                  <figure class="about__skill">
+                    <img
+                      src="https://cdn.iconscout.com/icon/free/png-256/react-3-1175109.png"
+                      alt=""
+                      class="about__skill__img"
+                    />
+                    <span class="about__skill__name">React</span>
+                  </figure>
+                  <figure class="about__skill">
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/4/46/Touchicon-180.png"
+                      alt=""
+                      class="about__skill__img"
+                    />
+                    <span class="about__skill__name">Firebase</span>
+                  </figure>
+                </div>
+              </div>
+            </div>
+            <figure class="about__image__wrapper">
+              <img src="assets/about-image.png" alt="" class="about__image" />
+            </figure>
+          </div>
+        </div>
+      </section>
+      <section id="projects">
+        <svg
+          id="visual"
+          viewBox="0 0 1200 1300"
+          width="880"
+          height="1200"
+          xmlns="http://www.w3.org/2000/svg"
+          version="1.1"
+          class="blob blob-project"
+        >
+          <g transform="translate(927.4519875387796 -111.9512848530959)">
+            <path
+              d="M648.8 -752.4C919.6 -545.9 1272.3 -416.2 1356.5 -200.5C1440.7 15.3 1256.4 317.2 1074.3 608.8C892.3 900.4 712.4 1181.7 443.3 1327C174.2 1472.2 -184.1 1481.3 -364.5 1290.3C-544.9 1099.4 -547.4 708.5 -624.9 430.5C-702.4 152.5 -854.9 -12.6 -829.6 -144.5C-804.2 -276.4 -601 -375.2 -433.1 -599.8C-265.2 -824.3 -132.6 -1174.7 28.2 -1208.3C189 -1241.9 378 -958.8 648.8 -752.4"
+              fill="#000000"
+            ></path>
+          </g>
+        </svg>
+        <svg
+          id="visual"
+          viewBox="0 0 1200 1300"
+          width="880"
+          height="1200"
+          xmlns="http://www.w3.org/2000/svg"
+          version="1.1"
+          class="blob blob-project2"
+        >
+          <g transform="translate(927.4519875387796 -111.9512848530959)">
+            <path
+              d="M648.8 -752.4C919.6 -545.9 1272.3 -416.2 1356.5 -200.5C1440.7 15.3 1256.4 317.2 1074.3 608.8C892.3 900.4 712.4 1181.7 443.3 1327C174.2 1472.2 -184.1 1481.3 -364.5 1290.3C-544.9 1099.4 -547.4 708.5 -624.9 430.5C-702.4 152.5 -854.9 -12.6 -829.6 -144.5C-804.2 -276.4 -601 -375.2 -433.1 -599.8C-265.2 -824.3 -132.6 -1174.7 28.2 -1208.3C189 -1241.9 378 -958.8 648.8 -752.4"
+              fill="#000000"
+            ></path>
+          </g>
+        </svg>
+        <div class="container">
+          <div class="row projects__row">
+            <h2 class="projects__title">Projects</h2>
+            <div class="project">
+              <figure class="project__image__wrapper">
+                <img
+                  src="assets/project-image.png"
+                  alt=""
+                  class="project__image"
+                />
+                <div class="project__image__links">
+                  <a href="" target="_blank" class="project__image__link"
+                    ><i class="fa-solid fa-up-right-from-square"></i
+                  ></a>
+                  <a href="" target="_blank" class="project__image__link"
+                    ><i class="fa-brands fa-github"></i
+                  ></a>
+                </div>
+              </figure>
+              <div class="project__description">
+                <h3 class="project__title">React Project</h3>
+                <div class="project__skills">
+                  <div class="project__skill">HTML</div>
+                  <div class="project__skill">CSS</div>
+                  <div class="project__skill">JavaScript</div>
+                  <div class="project__skill">React</div>
+                </div>
+                <p class="project__para">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Repellendus ullam perspiciatis repellat ratione! Quidem illum,
+                  architecto obcaecati necessitatibus quaerat, ad, culpa sit
+                  dignissimos explicabo perferendis quia quasi eum magnam nisi.
+                </p>
+                <div class="project__links">
+                  <a href="" class="project__link"
+                    ><span>Live Link</span
+                    ><i class="fa-solid fa-up-right-from-square"></i
+                  ></a>
+                  <a href="" class="project__link"
+                    ><span>Code</span><i class="fa-brands fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="contact">
+        <div class="container">
+          <div class="row contact__row">
+            <div class="contact__description">
+              <h2 class="contact__title">Contact</h2>
+              <h3 class="contact__subtitle">Ready to build something great?</h3>
+              <p class="contact__para">
+                If you have any opprotunities, ideas, or questions you want to
+                throw my way, don't hesitate to message me!
+              </p>
+              <a href="mailto: me@rosafi.io" class="contact__link"
+                ><i class="fa-solid fa-envelope"></i>
+                <span>me@rosafi.io</span></a
+              >
+            </div>
+            <form action="#" class="contact__form" onsubmit="sendEmail(event)">
+              <div class="form__item">
+                <label class="form__item__label">Name</label>
+                <input type="text" name="name" required class="form__item__input" />
+              </div>
+              <div class="form__item">
+                <label class="form__item__label">Email</label>
+                <input type="email" name="email" required class="form__item__input" />
+              </div>
+              <div class="form__item">
+                <label for="" class="form__item__label">Message</label>
+                <textarea required name="message" class="form__item__textarea"></textarea>
+              </div>
+              <button class="contact__form__submit">Send <div class="contact__form__loading hidden">
+                <i class="fa-solid fa-spinner contact__form__loading__icon"></i>
+              </div>
+            </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="row footer__row">
+        <span class="footer__copyright"
+          >Copyright © 2025. All rights reserved
+        </span>
+        <div class="footer__links">
+          <a
+            href="https://www.linkedin.com/in/manuelrosajr/"
+            class="footer__link"
+            target="_blank"
+          >
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a
+            href="https://github.com/mannyrosajr"
+            class="footer__link"
+            target="_blank"
+          >
+            <i class="fa-brands fa-square-github"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/manuelrosajr/"
+            class="footer__link"
+            target="_blank"
+          >
+            <i class="fa-solid fa-file-pdf"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
