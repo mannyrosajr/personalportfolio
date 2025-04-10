@@ -753,6 +753,11 @@ footer {
     border-radius: 0px;
     max-width: 100%;
   }
+
+  .blob-project {
+    left: -650px;
+    rotate: 220deg;
+  }
 }
 
 /* Large Screens */
@@ -796,7 +801,10 @@ footer {
   .project__para {
     font-size: 12px;
   }
+
 }
+
+
 
 /* Tablet Screen */
 
