@@ -245,6 +245,7 @@ html {
 }
 
 .menu__open__button{
+  all:unset;
   color:var(--primary)
 }
 
