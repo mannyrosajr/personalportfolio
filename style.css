@@ -244,6 +244,10 @@ html {
   color: var(--primary);
 }
 
+.menu__open__button{
+  color:var(--primary)
+}
+
 /* Home */
 
 #home {
