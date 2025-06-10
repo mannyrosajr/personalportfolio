@@ -14,10 +14,6 @@ function closeMenu() {
   body.classList.remove("open");
 }
 
-//template_qfldt3q
-// service_k7h02th
-// 9JmTc-GfRoLgQ2oyI
-
 async function sendEmail(event) {
   event.preventDefault();
   const body = document.body;

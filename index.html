@@ -10,23 +10,26 @@
       src="https://kit.fontawesome.com/75b1d79bee.js"
       crossorigin="anonymous"
     ></script>
-    <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-</script>
-<script type="text/javascript">
-   (function(){
-      emailjs.init({
-        publicKey: "9JmTc-GfRoLgQ2oyI",
-      });
-   })();
-</script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "9JmTc-GfRoLgQ2oyI",
+        });
+      })();
+    </script>
   </head>
 
   <div class="success">
     <i class="fa-regular fa-circle-check success__icon"></i>
     <div class="success__text">
       <span class="success__text__title">Message Sent!</span>
-      <p class="success__text__para">Your message has been received. I'll get back to you soon!</p>
+      <p class="success__text__para">
+        Your message has been received. I'll get back to you soon!
+      </p>
     </div>
   </div>
 
@@ -50,15 +53,19 @@
 
     <div class="menu__wrapper">
       <nav class="menu">
-        <button class="menu__close" onclick="closeMenu()"><i class="fa-solid fa-x"></i></button>
+        <button class="menu__close" onclick="closeMenu()">
+          <i class="fa-solid fa-x"></i>
+        </button>
 
         <div class="menu__links">
           <a href="#home" class="menu__link" onclick="closeMenu()">Home</a>
           <a href="#about" class="menu__link" onclick="closeMenu()">About Me</a>
-          <a href="#projects" class="menu__link" onclick="closeMenu()">Projects</a>
+          <a href="#projects" class="menu__link" onclick="closeMenu()"
+            >Projects</a
+          >
           <a href="#contact" class="menu__link" onclick="closeMenu()">
-          <button class="menu__link__button">Contact</button>
-        </a>
+            <button class="menu__link__button">Contact</button>
+          </a>
         </div>
       </nav>
     </div>
@@ -233,7 +240,7 @@
             <div class="project">
               <figure class="project__image__wrapper">
                 <img
-                  src="assets/project-image.png"
+                  src="assets/React-project1.png"
                   alt=""
                   class="project__image"
                 />
@@ -247,7 +254,7 @@
                 </div>
               </figure>
               <div class="project__description">
-                <h3 class="project__title">React Project</h3>
+                <h3 class="project__title">Car Rental Landing Page (React)</h3>
                 <div class="project__skills">
                   <div class="project__skill">HTML</div>
                   <div class="project__skill">CSS</div>
@@ -255,10 +262,11 @@
                   <div class="project__skill">React</div>
                 </div>
                 <p class="project__para">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Repellendus ullam perspiciatis repellat ratione! Quidem illum,
-                  architecto obcaecati necessitatibus quaerat, ad, culpa sit
-                  dignissimos explicabo perferendis quia quasi eum magnam nisi.
+                  A modern, responsive car rental landing page built with React,
+                  JavaScript, HTML, and CSS. It uses Axios to fetch and display
+                  vehicle data dynamically from an external API. The layout is
+                  clean and user-friendly, featuring smooth component-based
+                  interactions and a polished front-end design.
                 </p>
                 <div class="project__links">
                   <a href="" class="project__link"
@@ -292,20 +300,38 @@
             <form action="#" class="contact__form" onsubmit="sendEmail(event)">
               <div class="form__item">
                 <label class="form__item__label">Name</label>
-                <input type="text" name="name" required class="form__item__input" />
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  class="form__item__input"
+                />
               </div>
               <div class="form__item">
                 <label class="form__item__label">Email</label>
-                <input type="email" name="email" required class="form__item__input" />
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  class="form__item__input"
+                />
               </div>
               <div class="form__item">
                 <label for="" class="form__item__label">Message</label>
-                <textarea required name="message" class="form__item__textarea"></textarea>
+                <textarea
+                  required
+                  name="message"
+                  class="form__item__textarea"
+                ></textarea>
               </div>
-              <button class="contact__form__submit">Send <div class="contact__form__loading hidden">
-                <i class="fa-solid fa-spinner contact__form__loading__icon"></i>
-              </div>
-            </button>
+              <button class="contact__form__submit">
+                Send
+                <div class="contact__form__loading hidden">
+                  <i
+                    class="fa-solid fa-spinner contact__form__loading__icon"
+                  ></i>
+                </div>
+              </button>
             </form>
           </div>
         </div>
