@@ -101,7 +101,7 @@ html {
   outline: none;
   font-size: 24px;
   cursor: pointer;
-  display: none;
+  display: none !important;
   all: unset;
   color: var(--primary);
 }
@@ -902,11 +902,11 @@ footer {
 /* Phone Screen */
 @media (max-width: 640px) {
   .nav__menu {
-    display: block;
+    display: block !important;
   }
 
   .nav__links {
-    display: none;
+    display: none !important;
   }
 
   /* Header */
