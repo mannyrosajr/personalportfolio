@@ -984,3 +984,27 @@ footer {
     font-size: 14px;
   }
 }
+/* Centered layout for Buy3Get1 project container */
+.project--buy3get1 {
+  height: auto;
+  padding: 40px 32px;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  text-align: center;
+}
+
+.project--buy3get1 .project__description {
+  max-width: 100%;
+  align-items: center;
+  text-align: center;
+}
+
+.project--buy3get1 .project__para {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.project--buy3get1 .project__skills {
+  justify-content: center;
+}
