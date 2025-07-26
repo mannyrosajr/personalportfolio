@@ -364,6 +364,7 @@ html {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  
 }
 
 .about__skill__wrapper {
@@ -373,8 +374,8 @@ html {
 }
 
 .about__skill {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -402,7 +403,7 @@ html {
 }
 
 .about__image__wrapper {
-  width: 400px;
+  width: 550px;
   max-width: 100%;
   height: auto;
   position: relative;
