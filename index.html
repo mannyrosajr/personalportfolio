@@ -15,6 +15,7 @@
     <meta name="twitter:card" content="summary_large_image" />
 
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="app.js"></script>
     <script
       src="https://kit.fontawesome.com/75b1d79bee.js"
@@ -54,6 +55,17 @@
           <a href="#contact" class="nav__link">
             <button class="nav__link__button">Contact</button>
           </a>
+          <div class="theme-switcher">
+            <button class="theme-switcher__button" onclick="setTheme('light')">
+                <i class="fa-solid fa-sun"></i>
+            </button>
+            <button class="theme-switcher__button" onclick="setTheme('dark')">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+            <button class="theme-switcher__button" onclick="setTheme('colorful')">
+                <i class="fa-solid fa-palette"></i>
+            </button>
+          </div>
         </div>
         <button class="nav__menu" onclick="openMenu()">
           <i class="fa-solid fa-bars"></i>
@@ -99,9 +111,9 @@
       </svg>
       <div class="container">
         <div class="row header__row">
-          <span class="header__span">Hey, I'm</span>
+          <span class="header__span">Hello, I'm</span>
           <h1 class="header__title">Manuel Rosa</h1>
-          <h2 class="header__subtitle">Freelance Frontend Developer</h2>
+          <h2 class="header__subtitle">Data Scientist</h2>
           <span class="header__about"
             >Find out more <a href="#about" class="bold">about me.</a></span
           >
@@ -140,7 +152,7 @@
     <main>
       <section id="about">
         <div class="container">
-          <div class="row about__row">
+          <div class="row about__row fade-in">
             <div class="about__content">
               <div class="about__text">
                 <h3 class="about__text__title">About Me</h3>
@@ -150,23 +162,19 @@
                   <span class="bold">Information Systems student</span> at the
                   <span class="bold">University of Cincinnati</span> with a
                   strong focus on
-                  <span class="bold">data analysis, SQL, and Python</span>. I’ve
-                  applied these skills through hands-on projects and the
-                  <span class="bold">Global Career Accelerator</span>, where I
-                  worked with real business datasets from companies like Intel
-                  and the Grammys. Alongside my data work, I specialize in
+                  <span class="bold"> data science and analytics</span>. I’ve
+                  applied these skills through hands-on projects and worked with real business datasets from companies like Intel
+                  and the Grammys. Alongside my data skillset, I have a background in
                   <span class="bold">front-end development</span> using
                   <span class="bold">HTML, CSS, JavaScript, and React</span> to
-                  build user-friendly interfaces that pair design with function.
-                  I’m driven by the challenge of connecting data and design —
-                  and always pushing to create smarter, more impactful digital
-                  experiences.
+                  build modern, web applications for small businesses.
+                
                 </p>
               </div>
               <div class="about__skills">
                 <h3 class="about__title">My Skills</h3>
                 <div class="about__skill__wrapper">
-                  <figure class="about__skill">
+                  <figure class="about__skill" data-tooltip="Used for data analysis with Pandas and NumPy, and for web scraping with Beautiful Soup.">
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"
                       alt=""
@@ -174,7 +182,7 @@
                     />
                     <span class="about__skill__name">Python</span>
                   </figure>
-                  <figure class="about__skill">
+                  <figure class="about__skill" data-tooltip="Experience with complex queries, joins, and subqueries to analyze data from relational databases.">
                     <img
                       src="https://db.cs.uni-tuebingen.de/teaching/ws2223/sql-is-a-programming-language/logo.svg"
                       alt=""
@@ -182,7 +190,7 @@
                     />
                     <span class="about__skill__name">SQL</span>
                   </figure>
-                  <figure class="about__skill">
+                  <figure class="about__skill" data-tooltip="Proficient in semantic HTML5 for building well-structured and accessible web pages.">
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png"
                       alt=""
@@ -190,7 +198,7 @@
                     />
                     <span class="about__skill__name">HTML</span>
                   </figure>
-                  <figure class="about__skill">
+                  <figure class="about__skill" data-tooltip="Skilled in modern CSS, including Flexbox, Grid, and responsive design techniques.">
                     <img
                       src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png"
                       alt=""
@@ -198,7 +206,7 @@
                     />
                     <span class="about__skill__name">CSS</span>
                   </figure>
-                  <figure class="about__skill">
+                  <figure class="about__skill" data-tooltip="Experience with ES6+ features, DOM manipulation, and asynchronous programming.">
                     <img
                       src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png"
                       alt=""
@@ -206,7 +214,7 @@
                     />
                     <span class="about__skill__name">JavaScript</span>
                   </figure>
-                  <figure class="about__skill">
+                  <figure class="about__skill" data-tooltip="Built dynamic and interactive user interfaces with React, including component-based architecture and state management.">
                     <img
                       src="https://cdn.iconscout.com/icon/free/png-256/react-3-1175109.png"
                       alt=""
@@ -214,7 +222,7 @@
                     />
                     <span class="about__skill__name">React</span>
                   </figure>
-                  <figure class="about__skill">
+                  <figure class="about__skill" data-tooltip="Used Firebase for authentication and as a real-time database for web applications.">
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/4/46/Touchicon-180.png"
                       alt=""
@@ -222,7 +230,7 @@
                     />
                     <span class="about__skill__name">Firebase</span>
                   </figure>
-                  <figure class="about__skill">
+                  <figure class="about__skill" data-tooltip="Created interactive and insightful dashboards to visualize and analyze business data.">
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg"
                       alt=""
@@ -275,7 +283,12 @@
         <div class="container">
           <div class="row projects__row">
             <h2 class="projects__title">Projects</h2>
-            <div class="project project--buy3get1">
+            <div class="project-filter">
+              <button class="project-filter__button active" onclick="filterProjects('all')" data-filter="all">All</button>
+              <button class="project-filter__button" onclick="filterProjects('data')" data-filter="data">Data Projects</button>
+              <button class="project-filter__button" onclick="filterProjects('frontend')" data-filter="frontend">Frontend Projects</button>
+            </div>
+            <div class="project project--buy3get1 fade-in" data-category="frontend">
               <figure class="project__image__wrapper">
                 <img
                   src="assets/freelance1.png"
@@ -347,7 +360,7 @@
               </div>
             </div>
 
-            <div class="project project--buy3get1">
+            <div class="project project--buy3get1 fade-in" data-category="data">
               <figure class="project__image__wrapper">
                 <img
                   src="assets/intel-project.png"
@@ -401,7 +414,7 @@
                 </div>
               </div>
             </div>
-            <div class="project project--buy3get1">
+            <div class="project project--buy3get1 fade-in" data-category="data">
               <figure class="project__image__wrapper">
                 <img src="assets/PowerBI.png" alt="" class="project__image" />
                 <div class="project__image__links">
@@ -448,7 +461,7 @@
                 </div>
               </div>
             </div>
-            <div class="project project--buy3get1">
+            <div class="project project--buy3get1 fade-in" data-category="frontend">
               <figure class="project__image__wrapper">
                 <img
                   src="assets/React-project1.png"
@@ -589,5 +602,6 @@
         </div>
       </div>
     </footer>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   </body>
 </html>
