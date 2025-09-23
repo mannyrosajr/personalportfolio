@@ -351,6 +351,7 @@ html {
   font-size: 18px;
   font-weight: 600;
   animation: slideUpAnimate 500ms;
+  visibility: hidden;
 }
 
 .header__title {
@@ -358,6 +359,7 @@ html {
   font-weight: 600;
   line-height: 100px;
   color: var(--primary-text);
+  visibility: hidden;
 }
 
 .header__subtitle {
@@ -365,6 +367,7 @@ html {
   font-weight: 600;
   line-height: 44px;
   color: var(--accent-color);
+  visibility: hidden;
 }
 
 .header__about {
