@@ -1,607 +1,503 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Manuel Rosa</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <meta property="og:title" content="Manuel Rosa | Portfolio" />
-    <meta
-      property="og:description"
-      content="Check out my latest web development and data projects."
-    />
-    <meta property="og:image" content="https://rosafi.io/website_preview.png" />
-    <meta property="og:url" content="https://rosafi.io" />
-    <meta name="twitter:card" content="summary_large_image" />
 
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <script src="app.js"></script>
-    <script
-      src="https://kit.fontawesome.com/75b1d79bee.js"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
-    ></script>
-    <script type="text/javascript">
-      (function () {
-        emailjs.init({
-          publicKey: "9JmTc-GfRoLgQ2oyI",
-        });
-      })();
-    </script>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manuel Rosa</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <meta property="og:title" content="Manuel Rosa | Portfolio" />
+  <meta property="og:description" content="Check out my latest web development and data projects." />
+  <meta property="og:image" content="https://rosafi.io/website_preview.png" />
+  <meta property="og:url" content="https://rosafi.io" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-  <div class="success">
-    <i class="fa-regular fa-circle-check success__icon"></i>
-    <div class="success__text">
-      <span class="success__text__title">Message Sent!</span>
-      <p class="success__text__para">
-        Your message has been received. I'll get back to you soon!
-      </p>
-    </div>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <script src="app.js"></script>
+  <script src="https://kit.fontawesome.com/75b1d79bee.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init({
+        publicKey: "9JmTc-GfRoLgQ2oyI",
+      });
+    })();
+  </script>
+</head>
+
+<div class="success">
+  <i class="fa-regular fa-circle-check success__icon"></i>
+  <div class="success__text">
+    <span class="success__text__title">Message Sent!</span>
+    <p class="success__text__para">
+      Your message has been received. I'll get back to you soon!
+    </p>
   </div>
+</div>
 
-  <body>
-    <nav class="nav">
-      <div class="nav__container">
-        <span class="nav__logo">Manuel Rosa</span>
-        <div class="nav__links">
-          <a href="#home" class="nav__link">Home</a>
-          <a href="#about" class="nav__link">About Me</a>
-          <a href="#projects" class="nav__link">Projects</a>
-          <a href="#contact" class="nav__link">
-            <button class="nav__link__button">Contact</button>
-          </a>
-          <div class="theme-switcher">
-            <button class="theme-switcher__button" onclick="setTheme('light')">
-                <i class="fa-solid fa-sun"></i>
-            </button>
-            <button class="theme-switcher__button" onclick="setTheme('dark')">
-                <i class="fa-solid fa-moon"></i>
-            </button>
-            <button class="theme-switcher__button" onclick="setTheme('colorful')">
-                <i class="fa-solid fa-palette"></i>
-            </button>
-          </div>
+<body>
+  <nav class="nav">
+    <div class="nav__container">
+      <span class="nav__logo">Manuel Rosa</span>
+      <div class="nav__links">
+        <a href="#home" class="nav__link">Home</a>
+        <a href="#about" class="nav__link">About Me</a>
+        <a href="#projects" class="nav__link">Projects</a>
+        <a href="#contact" class="nav__link">
+          <button class="nav__link__button">Contact</button>
+        </a>
+        <div class="theme-switcher">
+          <button class="theme-switcher__button" onclick="setTheme('light')">
+            <i class="fa-solid fa-sun"></i>
+          </button>
+          <button class="theme-switcher__button" onclick="setTheme('dark')">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+          <button class="theme-switcher__button" onclick="setTheme('colorful')">
+            <i class="fa-solid fa-palette"></i>
+          </button>
         </div>
-        <button class="nav__menu" onclick="openMenu()">
-          <i class="fa-solid fa-bars"></i>
-        </button>
+      </div>
+      <button class="nav__menu" onclick="openMenu()">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <div class="menu__wrapper">
+    <nav class="menu">
+      <button class="menu__close" onclick="closeMenu()">
+        <i class="fa-solid fa-x"></i>
+      </button>
+
+      <div class="menu__links">
+        <a href="#home" class="menu__link" onclick="closeMenu()">Home</a>
+        <a href="#about" class="menu__link" onclick="closeMenu()">About Me</a>
+        <a href="#projects" class="menu__link" onclick="closeMenu()">Projects</a>
+        <a href="#contact" class="menu__link" onclick="closeMenu()">
+          <button class="menu__link__button">Contact</button>
+        </a>
       </div>
     </nav>
+  </div>
 
-    <div class="menu__wrapper">
-      <nav class="menu">
-        <button class="menu__close" onclick="closeMenu()">
-          <i class="fa-solid fa-x"></i>
-        </button>
-
-        <div class="menu__links">
-          <a href="#home" class="menu__link" onclick="closeMenu()">Home</a>
-          <a href="#about" class="menu__link" onclick="closeMenu()">About Me</a>
-          <a href="#projects" class="menu__link" onclick="closeMenu()"
-            >Projects</a
-          >
-          <a href="#contact" class="menu__link" onclick="closeMenu()">
-            <button class="menu__link__button">Contact</button>
-          </a>
-        </div>
-      </nav>
-    </div>
-
-    <header id="home">
-      <svg
-        id="visual"
-        viewBox="0 0 1200 1300"
-        width="880"
-        height="1200"
-        xmlns="http://www.w3.org/2000/svg"
-        version="1.1"
-        class="blob blob-header"
-      >
-        <g transform="translate(927.4519875387796 -111.9512848530959)">
-          <path
-            d="M648.8 -752.4C919.6 -545.9 1272.3 -416.2 1356.5 -200.5C1440.7 15.3 1256.4 317.2 1074.3 608.8C892.3 900.4 712.4 1181.7 443.3 1327C174.2 1472.2 -184.1 1481.3 -364.5 1290.3C-544.9 1099.4 -547.4 708.5 -624.9 430.5C-702.4 152.5 -854.9 -12.6 -829.6 -144.5C-804.2 -276.4 -601 -375.2 -433.1 -599.8C-265.2 -824.3 -132.6 -1174.7 28.2 -1208.3C189 -1241.9 378 -958.8 648.8 -752.4"
-            fill="#000000"
-          ></path>
-        </g>
-      </svg>
-      <div class="container">
-        <div class="row header__row">
-          <span class="header__span">Hello, I'm</span>
-          <h1 class="header__title">Manuel Rosa</h1>
-          <h2 class="header__subtitle">Data Scientist</h2>
-          <span class="header__about"
-            >Find out more <a href="#about" class="bold">about me.</a></span
-          >
-          <div class="header__links">
-            <a
-              href="https://www.linkedin.com/in/manuelrosajr/"
-              class="header__link"
-              target="_blank"
-            >
-              <i class="fa-brands fa-linkedin"></i>
-            </a>
-            <a
-              href="https://github.com/mannyrosajr"
-              class="header__link"
-              target="_blank"
-            >
-              <i class="fa-brands fa-square-github"></i>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/manuelrosajr/"
-              class="header__link"
-              target="_blank"
-            >
-              <i class="fa-solid fa-file-pdf"></i>
-            </a>
-          </div>
-          <a href="#about" class="header__scroll">
-            <i class="fa-solid fa-angle-down"></i>
-            <i class="fa-solid fa-angle-down"></i>
-            <i class="fa-solid fa-angle-down"></i>
-          </a>
-        </div>
-      </div>
-    </header>
-
-    <main>
-      <section id="about">
-        <div class="container">
-          <div class="row about__row fade-in">
-            <div class="about__content">
-              <div class="about__text">
-                <h3 class="about__text__title">About Me</h3>
-                <h4 class="about__text__subtitle">Manuel Rosa</h4>
-                <p class="about__text__para">
-                  I'm an
-                  <span class="bold">Information Systems student</span> at the
-                  <span class="bold">University of Cincinnati</span> with a
-                  strong focus on
-                  <span class="bold"> data science and analytics</span>. I’ve
-                  applied these skills through hands-on projects and worked with real business datasets from companies like Intel
-                  and the Grammys. Alongside my data skillset, I have a background in
-                  <span class="bold">front-end development</span> using
-                  <span class="bold">HTML, CSS, JavaScript, and React</span> to
-                  build modern, web applications for small businesses.
-                
-                </p>
-              </div>
-              <div class="about__skills">
-                <h3 class="about__title">My Skills</h3>
-                <div class="about__skill__wrapper">
-                  <figure class="about__skill" data-tooltip="Used for data analysis with Pandas and NumPy, and for web scraping with Beautiful Soup.">
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"
-                      alt=""
-                      class="about__skill__img"
-                    />
-                    <span class="about__skill__name">Python</span>
-                  </figure>
-                  <figure class="about__skill" data-tooltip="Experience with complex queries, joins, and subqueries to analyze data from relational databases.">
-                    <img
-                      src="https://db.cs.uni-tuebingen.de/teaching/ws2223/sql-is-a-programming-language/logo.svg"
-                      alt=""
-                      class="about__skill__img"
-                    />
-                    <span class="about__skill__name">SQL</span>
-                  </figure>
-                  <figure class="about__skill" data-tooltip="Proficient in semantic HTML5 for building well-structured and accessible web pages.">
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png"
-                      alt=""
-                      class="about__skill__img"
-                    />
-                    <span class="about__skill__name">HTML</span>
-                  </figure>
-                  <figure class="about__skill" data-tooltip="Skilled in modern CSS, including Flexbox, Grid, and responsive design techniques.">
-                    <img
-                      src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png"
-                      alt=""
-                      class="about__skill__img"
-                    />
-                    <span class="about__skill__name">CSS</span>
-                  </figure>
-                  <figure class="about__skill" data-tooltip="Experience with ES6+ features, DOM manipulation, and asynchronous programming.">
-                    <img
-                      src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png"
-                      alt=""
-                      class="about__skill__img"
-                    />
-                    <span class="about__skill__name">JavaScript</span>
-                  </figure>
-                  <figure class="about__skill" data-tooltip="Built dynamic and interactive user interfaces with React, including component-based architecture and state management.">
-                    <img
-                      src="https://cdn.iconscout.com/icon/free/png-256/react-3-1175109.png"
-                      alt=""
-                      class="about__skill__img"
-                    />
-                    <span class="about__skill__name">React</span>
-                  </figure>
-                  <figure class="about__skill" data-tooltip="Used Firebase for authentication and as a real-time database for web applications.">
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/4/46/Touchicon-180.png"
-                      alt=""
-                      class="about__skill__img"
-                    />
-                    <span class="about__skill__name">Firebase</span>
-                  </figure>
-                  <figure class="about__skill" data-tooltip="Created interactive and insightful dashboards to visualize and analyze business data.">
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg"
-                      alt=""
-                      class="about__skill__img"
-                    />
-                    <span class="about__skill__name">PowerBI</span>
-                  </figure>
-                </div>
-              </div>
-            </div>
-            <figure class="about__image__wrapper">
-              <img src="assets/selfie.jpg" alt="" class="about__image" />
-            </figure>
-          </div>
-        </div>
-      </section>
-      <section id="projects">
-        <svg
-          id="visual"
-          viewBox="0 0 1200 1300"
-          width="880"
-          height="1200"
-          xmlns="http://www.w3.org/2000/svg"
-          version="1.1"
-          class="blob blob-project"
-        >
-          <g transform="translate(927.4519875387796 -111.9512848530959)">
-            <path
-              d="M648.8 -752.4C919.6 -545.9 1272.3 -416.2 1356.5 -200.5C1440.7 15.3 1256.4 317.2 1074.3 608.8C892.3 900.4 712.4 1181.7 443.3 1327C174.2 1472.2 -184.1 1481.3 -364.5 1290.3C-544.9 1099.4 -547.4 708.5 -624.9 430.5C-702.4 152.5 -854.9 -12.6 -829.6 -144.5C-804.2 -276.4 -601 -375.2 -433.1 -599.8C-265.2 -824.3 -132.6 -1174.7 28.2 -1208.3C189 -1241.9 378 -958.8 648.8 -752.4"
-              fill="#000000"
-            ></path>
-          </g>
-        </svg>
-        <svg
-          id="visual"
-          viewBox="0 0 1200 1300"
-          width="880"
-          height="1200"
-          xmlns="http://www.w3.org/2000/svg"
-          version="1.1"
-          class="blob blob-project2"
-        >
-          <g transform="translate(927.4519875387796 -111.9512848530959)">
-            <path
-              d="M648.8 -752.4C919.6 -545.9 1272.3 -416.2 1356.5 -200.5C1440.7 15.3 1256.4 317.2 1074.3 608.8C892.3 900.4 712.4 1181.7 443.3 1327C174.2 1472.2 -184.1 1481.3 -364.5 1290.3C-544.9 1099.4 -547.4 708.5 -624.9 430.5C-702.4 152.5 -854.9 -12.6 -829.6 -144.5C-804.2 -276.4 -601 -375.2 -433.1 -599.8C-265.2 -824.3 -132.6 -1174.7 28.2 -1208.3C189 -1241.9 378 -958.8 648.8 -752.4"
-              fill="#000000"
-            ></path>
-          </g>
-        </svg>
-        <div class="container">
-          <div class="row projects__row">
-            <h2 class="projects__title">Projects</h2>
-            <div class="project-filter">
-              <button class="project-filter__button active" onclick="filterProjects('all')" data-filter="all">All</button>
-              <button class="project-filter__button" onclick="filterProjects('data')" data-filter="data">Data Projects</button>
-              <button class="project-filter__button" onclick="filterProjects('frontend')" data-filter="frontend">Frontend Projects</button>
-            </div>
-            <div class="project project--buy3get1 fade-in" data-category="frontend">
-              <figure class="project__image__wrapper">
-                <img
-                  src="assets/freelance1.png"
-                  alt=""
-                  class="project__image"
-                />
-                <div class="project__image__links">
-                  <a
-                    href="https://freelance1-nu.vercel.app/"
-                    target="_blank"
-                    class="project__image__link"
-                    ><i class="fa-solid fa-up-right-from-square"></i
-                  ></a>
-                  <a
-                    href="https://github.com/mannyrosajr/freelance1"
-                    target="_blank"
-                    class="project__image__link"
-                    ><i class="fa-brands fa-github"></i
-                  ></a>
-                </div>
-              </figure>
-              <div class="project__description">
-                <h3 class="project__title">
-                  Buy3Get1: Scraping. SEO. WordPress. (Freelance)
-                </h3>
-                <div class="project__skills">
-                  <div class="project__skill">WordPress</div>
-                  <div class="project__skill">CSS</div>
-                  <div class="project__skill">Web Scrape</div>
-                  <div class="project__skill">Excel</div>
-                  <div class="project__skill">Yoast SEO</div>
-                  <div class="project__skill">Data Cleaning</div>
-                  <div class="project__skill">Communication</div>
-                </div>
-                <p class="project__para">
-                  Freelance web project for a Cleveland-based business that
-                  sells used restaurant and general merchandise. When I joined,
-                  their website had no inventory page, no SEO structure, and no
-                  system in place for organizing products. I came in with zero
-                  experience using WordPress — but by the end, I had built a
-                  fully functional product system, implemented SEO best
-                  practices, and even created tools the client could continue
-                  using after handoff. I scraped and imported hundreds of
-                  listings from Facebook Marketplace, designed a clean UI using
-                  WordPress and Elementor, and set up an SEO foundation using
-                  Yoast. I also built a reusable spreadsheet template so the
-                  business could keep uploading and managing their products
-                  internally. One of the most rewarding moments was when the
-                  client told me a customer had come into the store and asked
-                  about a specific item they had seen on the new inventory page.
-                  That’s the kind of real-world impact I aim for with every
-                  project.
-                </p>
-                <div class="project__links">
-                  <a
-                    href="https://freelance1-nu.vercel.app/"
-                    class="project__link"
-                    target="_blank"
-                    ><span>Live Link</span
-                    ><i class="fa-solid fa-up-right-from-square"></i
-                  ></a>
-                  <a
-                    href="https://github.com/mannyrosajr/freelance1"
-                    class="project__link"
-                    target="_blank"
-                    ><span>Code</span><i class="fa-brands fa-github"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div class="project project--buy3get1 fade-in" data-category="data">
-              <figure class="project__image__wrapper">
-                <img
-                  src="assets/intel-project.png"
-                  alt=""
-                  class="project__image"
-                />
-                <div class="project__image__links">
-                  <a
-                    href="https://intel-sql-project-3vjqcwdf0-mannyrosas-projects.vercel.app/"
-                    target="_blank"
-                    class="project__image__link"
-                    ><i class="fa-solid fa-up-right-from-square"></i
-                  ></a>
-                  <a
-                    href="https://github.com/mannyrosajr/intel-sql-project"
-                    target="_blank"
-                    class="project__image__link"
-                    ><i class="fa-brands fa-github"></i
-                  ></a>
-                </div>
-              </figure>
-              <div class="project__description">
-                <h3 class="project__title">
-                  Intel Sustainability Project (SQL)
-                </h3>
-                <div class="project__skills">
-                  <div class="project__skill">SQL</div>
-                  <div class="project__skill">HTML</div>
-                  <div class="project__skill">CSS</div>
-                </div>
-                <p class="project__para">
-                  Used SQL to analyze Intel’s repurposed device data and uncover
-                  trends in energy savings and carbon reduction. Explored how
-                  device age, type, and region impact sustainability. Delivered
-                  actionable insights to improve Intel’s environmental strategy.
-                </p>
-                <div class="project__links">
-                  <a
-                    href="https://intel-sql-project-3vjqcwdf0-mannyrosas-projects.vercel.app/"
-                    class="project__link"
-                    target="_blank"
-                    ><span>Live Link</span
-                    ><i class="fa-solid fa-up-right-from-square"></i
-                  ></a>
-                  <a
-                    href="https://github.com/mannyrosajr/intel-sql-project"
-                    class="project__link"
-                    target="_blank"
-                    ><span>Code</span><i class="fa-brands fa-github"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="project project--buy3get1 fade-in" data-category="data">
-              <figure class="project__image__wrapper">
-                <img src="assets/PowerBI.png" alt="" class="project__image" />
-                <div class="project__image__links">
-                  <a
-                    href="https://drive.google.com/file/d/13m16di_2FrXWqNkW9oRvgFkYm63DEBJO/view?usp=sharing"
-                    target="_blank"
-                    class="project__image__link"
-                    ><i class="fa-solid fa-up-right-from-square"></i
-                  ></a>
-                  <a
-                    href="https://github.com/mannyrosajr/PowerBIproject"
-                    target="_blank"
-                    class="project__image__link"
-                    ><i class="fa-brands fa-github"></i
-                  ></a>
-                </div>
-              </figure>
-              <div class="project__description">
-                <h3 class="project__title">Data Job Survey Dashboard</h3>
-                <div class="project__skills">
-                  <div class="project__skill">PowerBI</div>
-                  <div class="project__skill">Excel</div>
-                  <div class="project__skill">Data Cleaning</div>
-                  <div class="project__skill">Data Analysis</div>
-                </div>
-                <p class="project__para">
-                  An interactive Power BI dashboard analyzing global survey
-                  responses related to data jobs. It explores topics such as
-                  career entry difficulty, work-life balance, job satisfaction,
-                  age demographics, country distribution, favorite programming
-                  languages, and average salary. Includes dynamic visualizations
-                  for insights across regions and roles.
-                </p>
-                <div class="project__links">
-                  <a
-                    href="https://drive.google.com/file/d/13m16di_2FrXWqNkW9oRvgFkYm63DEBJO/view?usp=sharing"
-                    class="project__link"
-                    ><span>Download Link</span
-                    ></i
-                  ></a>
-                  <a href="https://github.com/mannyrosajr/PowerBIproject" class="project__link"
-                    ><span>Github</span><i class="fa-brands fa-github"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="project project--buy3get1 fade-in" data-category="frontend">
-              <figure class="project__image__wrapper">
-                <img
-                  src="assets/React-project1.png"
-                  alt=""
-                  class="project__image"
-                />
-                <div class="project__image__links">
-                  <a
-                    href="https://react-car-rental-woad.vercel.app/"
-                    target="_blank"
-                    class="project__image__link"
-                    ><i class="fa-solid fa-up-right-from-square"></i
-                  ></a>
-                  <a
-                    href="https://github.com/mannyrosajr/react-car-rental"
-                    target="_blank"
-                    class="project__image__link"
-                    ><i class="fa-brands fa-github"></i
-                  ></a>
-                </div>
-              </figure>
-              <div class="project__description">
-                <h3 class="project__title">Car Rental Landing Page (React)</h3>
-                <div class="project__skills">
-                  <div class="project__skill">HTML</div>
-                  <div class="project__skill">CSS</div>
-                  <div class="project__skill">JavaScript</div>
-                  <div class="project__skill">React</div>
-                </div>
-                <p class="project__para">
-                  A modern, responsive car rental landing page built with React,
-                  JavaScript, HTML, and CSS. It uses Axios to fetch and display
-                  vehicle data dynamically from an external API. The layout is
-                  clean and user-friendly, featuring smooth component-based
-                  interactions and a polished front-end design.
-                </p>
-                <div class="project__links">
-                  <a
-                    href="https://react-car-rental-woad.vercel.app/"
-                    class="project__link"
-                    ><span>Live Link</span
-                    ><i class="fa-solid fa-up-right-from-square"></i
-                  ></a>
-                  <a
-                    href="https://github.com/mannyrosajr/react-car-rental"
-                    class="project__link"
-                    ><span>Code</span><i class="fa-brands fa-github"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="contact">
-        <div class="container">
-          <div class="row contact__row">
-            <div class="contact__description">
-              <h2 class="contact__title">Contact</h2>
-              <h3 class="contact__subtitle">Ready to build something great?</h3>
-              <p class="contact__para">
-                If you have any opprotunities, ideas, or questions you want to
-                throw my way, don't hesitate to message me!
-              </p>
-              <a href="mailto: me@rosafi.io" class="contact__link"
-                ><i class="fa-solid fa-envelope"></i>
-                <span>me@rosafi.io</span></a
-              >
-            </div>
-            <form action="#" class="contact__form" onsubmit="sendEmail(event)">
-              <div class="form__item">
-                <label class="form__item__label">Name</label>
-                <input
-                  type="text"
-                  name="name"
-                  required
-                  class="form__item__input"
-                />
-              </div>
-              <div class="form__item">
-                <label class="form__item__label">Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  class="form__item__input"
-                />
-              </div>
-              <div class="form__item">
-                <label for="" class="form__item__label">Message</label>
-                <textarea
-                  required
-                  name="message"
-                  class="form__item__textarea"
-                ></textarea>
-              </div>
-              <button class="contact__form__submit">
-                Send
-                <div class="contact__form__loading hidden">
-                  <i
-                    class="fa-solid fa-spinner contact__form__loading__icon"
-                  ></i>
-                </div>
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <div class="row footer__row">
-        <span class="footer__copyright"
-          >Copyright © 2025. All rights reserved
-        </span>
-        <div class="footer__links">
-          <a
-            href="https://www.linkedin.com/in/manuelrosajr/"
-            class="footer__link"
-            target="_blank"
-          >
+  <header id="home">
+    <svg id="visual" viewBox="0 0 1200 1300" width="880" height="1200" xmlns="http://www.w3.org/2000/svg" version="1.1"
+      class="blob blob-header">
+      <g transform="translate(927.4519875387796 -111.9512848530959)">
+        <path
+          d="M648.8 -752.4C919.6 -545.9 1272.3 -416.2 1356.5 -200.5C1440.7 15.3 1256.4 317.2 1074.3 608.8C892.3 900.4 712.4 1181.7 443.3 1327C174.2 1472.2 -184.1 1481.3 -364.5 1290.3C-544.9 1099.4 -547.4 708.5 -624.9 430.5C-702.4 152.5 -854.9 -12.6 -829.6 -144.5C-804.2 -276.4 -601 -375.2 -433.1 -599.8C-265.2 -824.3 -132.6 -1174.7 28.2 -1208.3C189 -1241.9 378 -958.8 648.8 -752.4"
+          fill="#000000"></path>
+      </g>
+    </svg>
+    <div class="container">
+      <div class="row header__row">
+        <span class="header__span">Hello, I'm</span>
+        <h1 class="header__title">Manuel Rosa</h1>
+        <h2 class="header__subtitle">Full Stack Developer</h2>
+        <span class="header__about">Find out more <a href="#about" class="bold">about me.</a></span>
+        <div class="header__links">
+          <a href="https://www.linkedin.com/in/manuelrosajr/" class="header__link" target="_blank">
             <i class="fa-brands fa-linkedin"></i>
           </a>
-          <a
-            href="https://github.com/mannyrosajr"
-            class="footer__link"
-            target="_blank"
-          >
+          <a href="https://github.com/mannyrosajr" class="header__link" target="_blank">
             <i class="fa-brands fa-square-github"></i>
           </a>
-          <a
-            href="https://www.linkedin.com/in/manuelrosajr/"
-            class="footer__link"
-            target="_blank"
-          >
+          <a href="https://www.linkedin.com/in/manuelrosajr/" class="header__link" target="_blank">
             <i class="fa-solid fa-file-pdf"></i>
           </a>
         </div>
+        <a href="#about" class="header__scroll">
+          <i class="fa-solid fa-angle-down"></i>
+          <i class="fa-solid fa-angle-down"></i>
+          <i class="fa-solid fa-angle-down"></i>
+        </a>
       </div>
-    </footer>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  </body>
+    </div>
+  </header>
+
+  <main>
+    <section id="about">
+      <div class="container">
+        <div class="row about__row fade-in">
+          <div class="about__content">
+            <div class="about__text">
+              <h3 class="about__text__title">About Me</h3>
+              <h4 class="about__text__subtitle">Manuel Rosa</h4>
+              <p class="about__text__para">
+                I’m Manny, a <strong>web developer</strong> with a foot in both tech and business, moving deeper into <strong>low‑code tools and automation</strong>. I studied <strong>Information Systems</strong>, learned <strong>database design</strong>, and earned <strong>certifications in coding for data</strong>, so I’m comfortable working with both <strong>interfaces and the data layer</strong> behind them. Right now I’m interning at a <strong>web design agency</strong> and doing <strong>freelance projects</strong>, building sites and tools that try to balance <strong>clean UI, solid technical decisions, and real business use cases</strong>.
+              </p>
+            </div>
+            <div class="about__skills">
+              <h3 class="about__title">My Skills</h3>
+              <div class="about__skill__wrapper">
+                <figure class="about__skill"
+                  data-tooltip="Used for data analysis with Pandas and NumPy, and for web scraping with Beautiful Soup.">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt=""
+                    class="about__skill__img" />
+                  <span class="about__skill__name">Python</span>
+                </figure>
+                <figure class="about__skill"
+                  data-tooltip="Experience with complex queries, joins, and subqueries to analyze data from relational databases.">
+                  <img src="https://db.cs.uni-tuebingen.de/teaching/ws2223/sql-is-a-programming-language/logo.svg"
+                    alt="" class="about__skill__img" />
+                  <span class="about__skill__name">SQL</span>
+                </figure>
+                <figure class="about__skill"
+                  data-tooltip="Proficient in semantic HTML5 for building well-structured and accessible web pages.">
+                  <img src="assets/HTML5_Logo.svg" alt="HTML logo" class="about__skill__img" />
+                  <span class="about__skill__name">HTML</span>
+                </figure>                <figure class="about__skill"
+                  data-tooltip="Skilled in modern CSS, including Flexbox, Grid, and responsive design techniques.">
+                  <img src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png" alt=""
+                    class="about__skill__img" />
+                  <span class="about__skill__name">CSS</span>
+                </figure>
+                <figure class="about__skill"
+                  data-tooltip="Experience with ES6+ features, DOM manipulation, and asynchronous programming.">
+                  <img src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png" alt=""
+                    class="about__skill__img" />
+                  <span class="about__skill__name">JavaScript</span>
+                </figure>
+                <figure class="about__skill"
+                  data-tooltip="Built dynamic and interactive user interfaces with React, including component-based architecture and state management.">
+                  <img src="https://cdn.iconscout.com/icon/free/png-256/react-3-1175109.png" alt="React logo"
+                    class="about__skill__img" />
+                  <span class="about__skill__name">React</span>
+                </figure>
+                <figure class="about__skill"
+                  data-tooltip="Experience building and managing websites with WordPress.">
+                  <img src="assets/WordPress_blue_logo.svg.png" alt="WordPress logo" class="about__skill__img" />
+                  <span class="about__skill__name">WordPress</span>
+                </figure>
+                <figure class="about__skill"
+                  data-tooltip="Experience designing and developing websites with Webflow.">
+                  <img src="assets/webflow-icon.webp" alt="Webflow logo" class="about__skill__img" />
+                  <span class="about__skill__name">Webflow</span>
+                </figure>                <figure class="about__skill"
+                  data-tooltip="Used Firebase for authentication and as a real-time database for web applications.">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Touchicon-180.png" alt=""
+                    class="about__skill__img" />
+                  <span class="about__skill__name">Firebase</span>
+                </figure>
+                <figure class="about__skill"
+                  data-tooltip="Created interactive and insightful dashboards to visualize and analyze business data.">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt=""
+                    class="about__skill__img" />
+                  <span class="about__skill__name">PowerBI</span>
+                </figure>
+              </div>
+            </div>
+          </div>
+          <figure class="about__image__wrapper">
+            <img src="assets/selfie.jpg" alt="" class="about__image" />
+          </figure>
+        </div>
+      </div>
+    </section>
+    <section id="projects">
+      <svg id="visual" viewBox="0 0 1200 1300" width="880" height="1200" xmlns="http://www.w3.org/2000/svg"
+        version="1.1" class="blob blob-project">
+        <g transform="translate(927.4519875387796 -111.9512848530959)">
+          <path
+            d="M648.8 -752.4C919.6 -545.9 1272.3 -416.2 1356.5 -200.5C1440.7 15.3 1256.4 317.2 1074.3 608.8C892.3 900.4 712.4 1181.7 443.3 1327C174.2 1472.2 -184.1 1481.3 -364.5 1290.3C-544.9 1099.4 -547.4 708.5 -624.9 430.5C-702.4 152.5 -854.9 -12.6 -829.6 -144.5C-804.2 -276.4 -601 -375.2 -433.1 -599.8C-265.2 -824.3 -132.6 -1174.7 28.2 -1208.3C189 -1241.9 378 -958.8 648.8 -752.4"
+            fill="#000000"></path>
+        </g>
+      </svg>
+      <svg id="visual" viewBox="0 0 1200 1300" width="880" height="1200" xmlns="http://www.w3.org/2000/svg"
+        version="1.1" class="blob blob-project2">
+        <g transform="translate(927.4519875387796 -111.9512848530959)">
+          <path
+            d="M648.8 -752.4C919.6 -545.9 1272.3 -416.2 1356.5 -200.5C1440.7 15.3 1256.4 317.2 1074.3 608.8C892.3 900.4 712.4 1181.7 443.3 1327C174.2 1472.2 -184.1 1481.3 -364.5 1290.3C-544.9 1099.4 -547.4 708.5 -624.9 430.5C-702.4 152.5 -854.9 -12.6 -829.6 -144.5C-804.2 -276.4 -601 -375.2 -433.1 -599.8C-265.2 -824.3 -132.6 -1174.7 28.2 -1208.3C189 -1241.9 378 -958.8 648.8 -752.4"
+            fill="#000000"></path>
+        </g>
+      </svg>
+      <div class="container">
+        <div class="row projects__row">
+          <h2 class="projects__title">Projects</h2>
+          <div class="project-filter">
+            <button class="project-filter__button active" onclick="filterProjects('all')" data-filter="all">All</button>
+            <button class="project-filter__button" onclick="filterProjects('data')" data-filter="data">Data
+              Projects</button>
+            <button class="project-filter__button" onclick="filterProjects('frontend')" data-filter="frontend">Frontend
+              Projects</button>
+          </div>
+          <div class="project project--buy3get1 fade-in" data-category="frontend">
+            <figure class="project__image__wrapper">
+              <img src="assets/freelance1.png" alt="" class="project__image" />
+              <div class="project__image__links">
+                <a href="https://freelance1-nu.vercel.app/" target="_blank" class="project__image__link"><i
+                    class="fa-solid fa-up-right-from-square"></i></a>
+                <a href="https://github.com/mannyrosajr/freelance1" target="_blank" class="project__image__link"><i
+                    class="fa-brands fa-github"></i></a>
+              </div>
+            </figure>
+            <div class="project__description">
+              <h3 class="project__title">
+                Buy3Get1: Scraping. SEO. WordPress. (Freelance)
+              </h3>
+              <div class="project__skills">
+                <div class="project__skill">WordPress</div>
+                <div class="project__skill">CSS</div>
+                <div class="project__skill">Web Scrape</div>
+                <div class="project__skill">Excel</div>
+                <div class="project__skill">Yoast SEO</div>
+                <div class="project__skill">Data Cleaning</div>
+                <div class="project__skill">Communication</div>
+              </div>
+              <p class="project__para">
+                Freelance web project for a Cleveland-based business that
+                sells used restaurant and general merchandise. When I joined,
+                their website had no inventory page, no SEO structure, and no
+                system in place for organizing products. I came in with zero
+                experience using WordPress — but by the end, I had built a
+                fully functional product system, implemented SEO best
+                practices, and even created tools the client could continue
+                using after handoff. I scraped and imported hundreds of
+                listings from Facebook Marketplace, designed a clean UI using
+                WordPress and Elementor, and set up an SEO foundation using
+                Yoast. I also built a reusable spreadsheet template so the
+                business could keep uploading and managing their products
+                internally. One of the most rewarding moments was when the
+                client told me a customer had come into the store and asked
+                about a specific item they had seen on the new inventory page.
+                That’s the kind of real-world impact I aim for with every
+                project.
+              </p>
+              <div class="project__links">
+                <a href="https://freelance1-nu.vercel.app/" class="project__link" target="_blank"><span>Live
+                    Link</span><i class="fa-solid fa-up-right-from-square"></i></a>
+                <a href="https://github.com/mannyrosajr/freelance1" class="project__link"
+                  target="_blank"><span>Code</span><i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project project--buy3get1 fade-in" data-category="data">
+            <figure class="project__image__wrapper">
+              <img src="assets/intel-project.png" alt="" class="project__image" />
+              <div class="project__image__links">
+                <a href="https://intel-sql-project-3vjqcwdf0-mannyrosas-projects.vercel.app/" target="_blank"
+                  class="project__image__link"><i class="fa-solid fa-up-right-from-square"></i></a>
+                <a href="https://github.com/mannyrosajr/intel-sql-project" target="_blank"
+                  class="project__image__link"><i class="fa-brands fa-github"></i></a>
+              </div>
+            </figure>
+            <div class="project__description">
+              <h3 class="project__title">
+                Intel Sustainability Project (SQL)
+              </h3>
+              <div class="project__skills">
+                <div class="project__skill">SQL</div>
+                <div class="project__skill">HTML</div>
+                <div class="project__skill">CSS</div>
+              </div>
+              <p class="project__para">
+                Used SQL to analyze Intel’s repurposed device data and uncover
+                trends in energy savings and carbon reduction. Explored how
+                device age, type, and region impact sustainability. Delivered
+                actionable insights to improve Intel’s environmental strategy.
+              </p>
+              <div class="project__links">
+                <a href="https://intel-sql-project-3vjqcwdf0-mannyrosas-projects.vercel.app/" class="project__link"
+                  target="_blank"><span>Live Link</span><i class="fa-solid fa-up-right-from-square"></i></a>
+                <a href="https://github.com/mannyrosajr/intel-sql-project" class="project__link"
+                  target="_blank"><span>Code</span><i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project project--buy3get1 fade-in" data-category="data">
+            <figure class="project__image__wrapper">
+              <img src="assets/PowerBI.png" alt="" class="project__image" />
+              <div class="project__image__links">
+                <a href="https://drive.google.com/file/d/13m16di_2FrXWqNkW9oRvgFkYm63DEBJO/view?usp=sharing"
+                  target="_blank" class="project__image__link"><i class="fa-solid fa-up-right-from-square"></i></a>
+                <a href="https://github.com/mannyrosajr/PowerBIproject" target="_blank" class="project__image__link"><i
+                    class="fa-brands fa-github"></i></a>
+              </div>
+            </figure>
+            <div class="project__description">
+              <h3 class="project__title">Data Job Survey Dashboard</h3>
+              <div class="project__skills">
+                <div class="project__skill">PowerBI</div>
+                <div class="project__skill">Excel</div>
+                <div class="project__skill">Data Cleaning</div>
+                <div class="project__skill">Data Analysis</div>
+              </div>
+              <p class="project__para">
+                An interactive Power BI dashboard analyzing global survey
+                responses related to data jobs. It explores topics such as
+                career entry difficulty, work-life balance, job satisfaction,
+                age demographics, country distribution, favorite programming
+                languages, and average salary. Includes dynamic visualizations
+                for insights across regions and roles.
+              </p>
+              <div class="project__links">
+                <a href="https://drive.google.com/file/d/13m16di_2FrXWqNkW9oRvgFkYm63DEBJO/view?usp=sharing"
+                  class="project__link"><span>Download Link</span></i></a>
+                <a href="https://github.com/mannyrosajr/PowerBIproject" class="project__link"><span>Github</span><i
+                    class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project project--buy3get1 fade-in" data-category="frontend">
+            <figure class="project__image__wrapper">
+              <img src="assets/React-project1.png" alt="" class="project__image" />
+              <div class="project__image__links">
+                <a href="https://react-car-rental-woad.vercel.app/" target="_blank" class="project__image__link"><i
+                    class="fa-solid fa-up-right-from-square"></i></a>
+                <a href="https://github.com/mannyrosajr/react-car-rental" target="_blank"
+                  class="project__image__link"><i class="fa-brands fa-github"></i></a>
+              </div>
+            </figure>
+            <div class="project__description">
+              <h3 class="project__title">Car Rental Landing Page (React)</h3>
+              <div class="project__skills">
+                <div class="project__skill">HTML</div>
+                <div class="project__skill">CSS</div>
+                <div class="project__skill">JavaScript</div>
+                <div class="project__skill">React</div>
+              </div>
+              <p class="project__para">
+                A modern, responsive car rental landing page built with React,
+                JavaScript, HTML, and CSS. It uses Axios to fetch and display
+                vehicle data dynamically from an external API. The layout is
+                clean and user-friendly, featuring smooth component-based
+                interactions and a polished front-end design.
+              </p>
+              <div class="project__links">
+                <a href="https://react-car-rental-woad.vercel.app/" class="project__link"><span>Live Link</span><i
+                    class="fa-solid fa-up-right-from-square"></i></a>
+                <a href="https://github.com/mannyrosajr/react-car-rental" class="project__link"><span>Code</span><i
+                    class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="gallery">
+      <div class="container">
+        <div class="row">
+          <h2 class="gallery__title">Photo Gallery</h2>
+          <p class="gallery__subtitle">A look into my personal life</p>
+        </div>
+      </div>
+      <div class="gallery-river">
+        <div class="gallery-track">
+          <figure class="gallery-item">
+            <img src="assets/graduation.jpg" alt="Accomplishment 1" />
+            <figcaption>I Graduated from The University of Cincinnati!</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/walking.jpeg" alt="Personal photo" />
+            <figcaption>Getting my Name Called at my Graduation Ceremony.</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/meandgf.jpeg" alt="Accomplishment 2" />
+            <figcaption>Me and my Girlfriend, Maria!</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/setup.jpeg" alt="Accomplishment 3" />
+            <figcaption>My Home Office Setup.</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/cats.jpeg" alt="Accomplishment 4" />
+            <figcaption>My Cats! Mazzy and Milo</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/view.jpeg" alt="Accomplishment 4" />
+            <figcaption>One of my favorite views from Cincinnati.</figcaption>
+          </figure>
+          <!-- Duplicate images for seamless loop -->
+          <figure class="gallery-item">
+            <img src="assets/graduation.jpg" alt="Accomplishment 1" />
+            <figcaption>I Graduated from The University of Cincinnati!</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/walking.jpeg" alt="Personal photo" />
+            <figcaption>Getting my Name Called at my Graduation Ceremony.</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/meandgf.jpeg" alt="Accomplishment 2" />
+            <figcaption>Me and my Girlfriend, Maria!</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/setup.jpeg" alt="Accomplishment 3" />
+            <figcaption>My Home Office Setup.</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/cats.jpeg" alt="Accomplishment 4" />
+            <figcaption>My Cats! Mazzy and Milo</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/view.jpeg" alt="Accomplishment 4" />
+            <figcaption>One of my favorite views from Cincinnati.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <div class="container">
+        <div class="row contact__row">
+          <div class="contact__description">
+            <h2 class="contact__title">Contact</h2>
+            <h3 class="contact__subtitle">Ready to build something great?</h3>
+            <p class="contact__para">
+              If you have any opprotunities, ideas, or questions you want to
+              throw my way, don't hesitate to message me!
+            </p>
+            <a href="mailto: me@rosafi.io" class="contact__link"><i class="fa-solid fa-envelope"></i>
+              <span>me@rosafi.io</span></a>
+          </div>
+          <form action="#" class="contact__form" onsubmit="sendEmail(event)">
+            <div class="form__item">
+              <label class="form__item__label">Name</label>
+              <input type="text" name="name" required class="form__item__input" />
+            </div>
+            <div class="form__item">
+              <label class="form__item__label">Email</label>
+              <input type="email" name="email" required class="form__item__input" />
+            </div>
+            <div class="form__item">
+              <label for="" class="form__item__label">Message</label>
+              <textarea required name="message" class="form__item__textarea"></textarea>
+            </div>
+            <button class="contact__form__submit">
+              Send
+              <div class="contact__form__loading hidden">
+                <i class="fa-solid fa-spinner contact__form__loading__icon"></i>
+              </div>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="row footer__row">
+      <span class="footer__copyright">Copyright © 2026. All rights reserved
+      </span>
+      <div class="footer__links">
+        <a href="https://www.linkedin.com/in/manuelrosajr/" class="footer__link" target="_blank">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/mannyrosajr" class="footer__link" target="_blank">
+          <i class="fa-brands fa-square-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/manuelrosajr/" class="footer__link" target="_blank">
+          <i class="fa-solid fa-file-pdf"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</body>
+
 </html>

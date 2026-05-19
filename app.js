@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 500);
 
   setTimeout(() => {
-    typeAnimation(subtitle, "Data Scientist", 100);
+    typeAnimation(subtitle, "Full Stack Developer", 100);
   }, 2000);
 });
 
