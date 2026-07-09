@@ -4,7 +4,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Manuel Rosa</title>
+  <title>Manuel Rosa | Full-Stack Developer</title>
+  <meta name="description"
+    content="Manuel Rosa is a full-stack developer who bridges clean interfaces and the data layer behind them. Web development, data analysis, and low-code automation." />
+  <meta name="theme-color" content="#0a0a10" />
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <meta property="og:title" content="Manuel Rosa | Portfolio" />
   <meta property="og:description" content="Check out my latest web development and data projects." />
@@ -12,8 +15,9 @@
   <meta property="og:url" content="https://rosafi.io" />
   <meta name="twitter:card" content="summary_large_image" />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <script src="app.js"></script>
   <script src="https://kit.fontawesome.com/75b1d79bee.js" crossorigin="anonymous"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
@@ -26,306 +30,459 @@
   </script>
 </head>
 
-<div class="success">
-  <i class="fa-regular fa-circle-check success__icon"></i>
-  <div class="success__text">
-    <span class="success__text__title">Message Sent!</span>
-    <p class="success__text__para">
-      Your message has been received. I'll get back to you soon!
-    </p>
-  </div>
-</div>
-
 <body>
+  <!-- Intro splash -->
+  <div class="splash" id="splash" aria-hidden="true">
+    <span class="splash__logo">MR<span class="splash__logo__dot">.</span></span>
+  </div>
+
+  <!-- Scroll progress -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress__bar" id="scroll-progress-bar"></div>
+  </div>
+
+  <!-- Custom cursor + glow (desktop only) -->
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Ambient liquid background -->
+  <div class="ambient" aria-hidden="true">
+    <canvas class="ambient__stars" id="starfield"></canvas>
+    <div class="ambient__orb ambient__orb--1"></div>
+    <div class="ambient__orb ambient__orb--2"></div>
+    <div class="ambient__orb ambient__orb--3"></div>
+    <div class="ambient__orb ambient__orb--4"></div>
+    <div class="ambient__grain"></div>
+  </div>
+
+  <!-- Success toast -->
+  <div class="success glass">
+    <i class="fa-regular fa-circle-check success__icon"></i>
+    <div class="success__text">
+      <span class="success__text__title">Message Sent!</span>
+      <p class="success__text__para">
+        Your message has been received. I'll get back to you soon!
+      </p>
+    </div>
+  </div>
+
   <nav class="nav">
-    <div class="nav__container">
-      <span class="nav__logo">Manuel Rosa</span>
+    <div class="nav__container glass">
+      <a href="#home" class="nav__logo">Manuel&nbsp;Rosa<span class="nav__logo__dot">.</span></a>
       <div class="nav__links">
         <a href="#home" class="nav__link">Home</a>
-        <a href="#about" class="nav__link">About Me</a>
-        <a href="#projects" class="nav__link">Projects</a>
-        <a href="#contact" class="nav__link">
-          <button class="nav__link__button">Contact</button>
-        </a>
-        <div class="theme-switcher">
-          <button class="theme-switcher__button" onclick="setTheme('light')">
-            <i class="fa-solid fa-sun"></i>
-          </button>
-          <button class="theme-switcher__button" onclick="setTheme('dark')">
-            <i class="fa-solid fa-moon"></i>
-          </button>
-          <button class="theme-switcher__button" onclick="setTheme('colorful')">
-            <i class="fa-solid fa-palette"></i>
-          </button>
-        </div>
+        <a href="#about" class="nav__link">About</a>
+        <a href="#projects" class="nav__link">Work</a>
+        <a href="#gallery" class="nav__link">Life</a>
+        <a href="#contact" class="nav__link nav__link--cta">Contact</a>
+        <button class="nav__cmdk" onclick="openPalette()" aria-label="Open command palette">
+          <kbd>⌘K</kbd>
+        </button>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+          <i class="fa-solid fa-moon theme-toggle__icon theme-toggle__icon--dark"></i>
+          <i class="fa-solid fa-sun theme-toggle__icon theme-toggle__icon--light"></i>
+        </button>
       </div>
-      <button class="nav__menu" onclick="openMenu()">
+      <button class="nav__menu" onclick="openMenu()" aria-label="Open menu">
         <i class="fa-solid fa-bars"></i>
       </button>
     </div>
   </nav>
 
   <div class="menu__wrapper">
-    <nav class="menu">
-      <button class="menu__close" onclick="closeMenu()">
-        <i class="fa-solid fa-x"></i>
+    <nav class="menu glass">
+      <button class="menu__close" onclick="closeMenu()" aria-label="Close menu">
+        <i class="fa-solid fa-xmark"></i>
       </button>
 
       <div class="menu__links">
         <a href="#home" class="menu__link" onclick="closeMenu()">Home</a>
-        <a href="#about" class="menu__link" onclick="closeMenu()">About Me</a>
-        <a href="#projects" class="menu__link" onclick="closeMenu()">Projects</a>
-        <a href="#contact" class="menu__link" onclick="closeMenu()">
-          <button class="menu__link__button">Contact</button>
-        </a>
+        <a href="#about" class="menu__link" onclick="closeMenu()">About</a>
+        <a href="#projects" class="menu__link" onclick="closeMenu()">Work</a>
+        <a href="#gallery" class="menu__link" onclick="closeMenu()">Life</a>
+        <a href="#contact" class="menu__link menu__link--cta" onclick="closeMenu()">Contact</a>
+        <button class="theme-toggle theme-toggle--menu" onclick="toggleTheme()" aria-label="Toggle theme">
+          <i class="fa-solid fa-moon theme-toggle__icon theme-toggle__icon--dark"></i>
+          <i class="fa-solid fa-sun theme-toggle__icon theme-toggle__icon--light"></i>
+          <span>Switch theme</span>
+        </button>
       </div>
     </nav>
   </div>
 
   <header id="home">
-    <svg id="visual" viewBox="0 0 1200 1300" width="880" height="1200" xmlns="http://www.w3.org/2000/svg" version="1.1"
-      class="blob blob-header">
-      <g transform="translate(927.4519875387796 -111.9512848530959)">
-        <path
-          d="M648.8 -752.4C919.6 -545.9 1272.3 -416.2 1356.5 -200.5C1440.7 15.3 1256.4 317.2 1074.3 608.8C892.3 900.4 712.4 1181.7 443.3 1327C174.2 1472.2 -184.1 1481.3 -364.5 1290.3C-544.9 1099.4 -547.4 708.5 -624.9 430.5C-702.4 152.5 -854.9 -12.6 -829.6 -144.5C-804.2 -276.4 -601 -375.2 -433.1 -599.8C-265.2 -824.3 -132.6 -1174.7 28.2 -1208.3C189 -1241.9 378 -958.8 648.8 -752.4"
-          fill="#000000"></path>
-      </g>
-    </svg>
     <div class="container">
-      <div class="row header__row">
-        <span class="header__span">Hello, I'm</span>
-        <h1 class="header__title">Manuel Rosa</h1>
-        <h2 class="header__subtitle">Full Stack Developer</h2>
-        <span class="header__about">Find out more <a href="#about" class="bold">about me.</a></span>
-        <div class="header__links">
-          <a href="https://www.linkedin.com/in/manuelrosajr/" class="header__link" target="_blank">
-            <i class="fa-brands fa-linkedin"></i>
+      <div class="row hero__row">
+        <div class="hero__content">
+        <div class="hero__chips reveal" style="--d: 0ms">
+          <span class="hero__chip glass"><span class="hero__chip__pulse"></span>Open to opportunities</span>
+          <span class="hero__chip glass"><i class="fa-solid fa-location-dot"></i>Cincinnati, OH</span>
+          <span class="hero__chip glass"><i class="fa-regular fa-clock"></i><span id="local-time">--:--</span>&nbsp;my time</span>
+        </div>
+        <span class="hero__span reveal" style="--d: 80ms">Hello, I'm</span>
+        <h1 class="hero__title reveal" style="--d: 160ms">Manuel Rosa</h1>
+        <h2 class="hero__subtitle reveal" style="--d: 240ms">
+          <span class="hero__typed"></span><span class="hero__caret" aria-hidden="true"></span>
+        </h2>
+        <p class="hero__lede reveal" style="--d: 320ms">
+          I build clean, fast websites and the data systems behind them.
+          One foot in tech, one in business, focused on shipping things that
+          actually move the needle.
+        </p>
+        <div class="hero__actions reveal" style="--d: 400ms">
+          <a href="#projects" class="btn btn--primary">See my work <i class="fa-solid fa-arrow-down"></i></a>
+          <a href="#contact" class="btn btn--glass glass">Get in touch</a>
+        </div>
+        <div class="hero__links reveal" style="--d: 480ms">
+          <a href="https://www.linkedin.com/in/manuelrosajr/" class="hero__link" target="_blank"
+            aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
           </a>
-          <a href="https://github.com/mannyrosajr" class="header__link" target="_blank">
-            <i class="fa-brands fa-square-github"></i>
+          <a href="https://github.com/mannyrosajr" class="hero__link" target="_blank" aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
           </a>
-          <a href="https://www.linkedin.com/in/manuelrosajr/" class="header__link" target="_blank">
+          <a href="https://www.linkedin.com/in/manuelrosajr/" class="hero__link" target="_blank" aria-label="Resume">
             <i class="fa-solid fa-file-pdf"></i>
           </a>
         </div>
-        <a href="#about" class="header__scroll">
-          <i class="fa-solid fa-angle-down"></i>
-          <i class="fa-solid fa-angle-down"></i>
-          <i class="fa-solid fa-angle-down"></i>
-        </a>
+        </div>
+        <aside class="hero__visual reveal" style="--d: 350ms">
+          <div class="hero__card glass-card glass">
+            <div class="hero__card__head">
+              <img src="assets/selfie.jpg" alt="Manuel Rosa" class="hero__card__avatar" />
+              <div class="hero__card__id">
+                <span class="hero__card__name">Manuel Rosa</span>
+                <span class="hero__card__role">Full-Stack Developer</span>
+              </div>
+              <span class="hero__card__badge"><span class="hero__chip__pulse"></span>Available</span>
+            </div>
+            <div class="hero__card__stats">
+              <div class="hero__card__stat">
+                <span class="hero__card__stat__num">5+</span>
+                <span class="hero__card__stat__label">Projects shipped</span>
+              </div>
+              <div class="hero__card__stat">
+                <span class="hero__card__stat__num">10+</span>
+                <span class="hero__card__stat__label">Technologies</span>
+              </div>
+              <div class="hero__card__stat">
+                <span class="hero__card__stat__num">1</span>
+                <span class="hero__card__stat__label">AI product live</span>
+              </div>
+            </div>
+            <div class="hero__card__footer">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <span>Information Systems, University of Cincinnati</span>
+            </div>
+          </div>
+          <div class="hero__float hero__float--1 glass">
+            <i class="fa-solid fa-wand-magic-sparkles"></i> Resumaker, my AI product
+          </div>
+          <div class="hero__float hero__float--2 glass">
+            <i class="fa-solid fa-chart-line"></i> Web + Data hybrid
+          </div>
+        </aside>
       </div>
+      <a href="#about" class="hero__scroll" aria-label="Scroll to about section">
+        <span class="hero__scroll__wheel"></span>
+      </a>
     </div>
   </header>
 
   <main>
+    <!-- About / Story -->
     <section id="about">
       <div class="container">
-        <div class="row about__row fade-in">
-          <div class="about__content">
-            <div class="about__text">
-              <h3 class="about__text__title">About Me</h3>
-              <h4 class="about__text__subtitle">Manuel Rosa</h4>
-              <p class="about__text__para">
-                I’m Manny, a <strong>web developer</strong> with a foot in both tech and business, moving deeper into <strong>low‑code tools and automation</strong>. I studied <strong>Information Systems</strong>, learned <strong>database design</strong>, and earned <strong>certifications in coding for data</strong>, so I’m comfortable working with both <strong>interfaces and the data layer</strong> behind them. Right now I’m interning at a <strong>web design agency</strong> and doing <strong>freelance projects</strong>, building sites and tools that try to balance <strong>clean UI, solid technical decisions, and real business use cases</strong>.
-              </p>
+        <div class="row">
+          <div class="section__head reveal">
+            <span class="section__eyebrow">About</span>
+            <h2 class="section__title">A short story about me</h2>
+          </div>
+          <div class="about__grid">
+            <div class="about__story">
+              <article class="story__step glass-card glass reveal" style="--d: 0ms">
+                <span class="story__step__num">01</span>
+                <h3 class="story__step__title">The foundation</h3>
+                <p class="story__step__para">
+                  I studied <strong>Information Systems</strong> at the University of
+                  Cincinnati, where I learned <strong>database design</strong> and earned
+                  <strong>certifications in coding for data</strong>. That's where I got
+                  comfortable living in both worlds: the interface people see, and the
+                  data layer underneath it.
+                </p>
+              </article>
+              <article class="story__step glass-card glass reveal" style="--d: 100ms">
+                <span class="story__step__num">02</span>
+                <h3 class="story__step__title">The craft</h3>
+                <p class="story__step__para">
+                  Today I'm interning at a <strong>web design agency</strong> and taking on
+                  <strong>freelance projects</strong>, building sites and internal tools
+                  with everything from <strong>React</strong> to <strong>WordPress and
+                  Webflow</strong>, and moving deeper into <strong>low-code tools and
+                  automation</strong>.
+                </p>
+              </article>
+              <article class="story__step glass-card glass reveal" style="--d: 200ms">
+                <span class="story__step__num">03</span>
+                <h3 class="story__step__title">The value</h3>
+                <p class="story__step__para">
+                  Every project balances three things: <strong>clean UI</strong>,
+                  <strong>solid technical decisions</strong>, and a <strong>real business
+                  use case</strong>. I don't just build things that look good; I build
+                  things that bring customers through the door.
+                </p>
+              </article>
             </div>
-            <div class="about__skills">
-              <h3 class="about__title">My Skills</h3>
-              <div class="about__skill__wrapper">
-                <figure class="about__skill"
-                  data-tooltip="Used for data analysis with Pandas and NumPy, and for web scraping with Beautiful Soup.">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt=""
-                    class="about__skill__img" />
-                  <span class="about__skill__name">Python</span>
-                </figure>
-                <figure class="about__skill"
-                  data-tooltip="Experience with complex queries, joins, and subqueries to analyze data from relational databases.">
-                  <img src="https://db.cs.uni-tuebingen.de/teaching/ws2223/sql-is-a-programming-language/logo.svg"
-                    alt="" class="about__skill__img" />
-                  <span class="about__skill__name">SQL</span>
-                </figure>
-                <figure class="about__skill"
-                  data-tooltip="Proficient in semantic HTML5 for building well-structured and accessible web pages.">
-                  <img src="assets/HTML5_Logo.svg" alt="HTML logo" class="about__skill__img" />
-                  <span class="about__skill__name">HTML</span>
-                </figure>                <figure class="about__skill"
-                  data-tooltip="Skilled in modern CSS, including Flexbox, Grid, and responsive design techniques.">
-                  <img src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png" alt=""
-                    class="about__skill__img" />
-                  <span class="about__skill__name">CSS</span>
-                </figure>
-                <figure class="about__skill"
-                  data-tooltip="Experience with ES6+ features, DOM manipulation, and asynchronous programming.">
-                  <img src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png" alt=""
-                    class="about__skill__img" />
-                  <span class="about__skill__name">JavaScript</span>
-                </figure>
-                <figure class="about__skill"
-                  data-tooltip="Built dynamic and interactive user interfaces with React, including component-based architecture and state management.">
-                  <img src="https://cdn.iconscout.com/icon/free/png-256/react-3-1175109.png" alt="React logo"
-                    class="about__skill__img" />
-                  <span class="about__skill__name">React</span>
-                </figure>
-                <figure class="about__skill"
-                  data-tooltip="Experience building and managing websites with WordPress.">
-                  <img src="assets/WordPress_blue_logo.svg.png" alt="WordPress logo" class="about__skill__img" />
-                  <span class="about__skill__name">WordPress</span>
-                </figure>
-                <figure class="about__skill"
-                  data-tooltip="Experience designing and developing websites with Webflow.">
-                  <img src="assets/webflow-icon.webp" alt="Webflow logo" class="about__skill__img" />
-                  <span class="about__skill__name">Webflow</span>
-                </figure>                <figure class="about__skill"
-                  data-tooltip="Used Firebase for authentication and as a real-time database for web applications.">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Touchicon-180.png" alt=""
-                    class="about__skill__img" />
-                  <span class="about__skill__name">Firebase</span>
-                </figure>
-                <figure class="about__skill"
-                  data-tooltip="Created interactive and insightful dashboards to visualize and analyze business data.">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt=""
-                    class="about__skill__img" />
-                  <span class="about__skill__name">PowerBI</span>
-                </figure>
-              </div>
+            <figure class="about__image__wrapper glass reveal" style="--d: 150ms">
+              <img src="assets/selfie.jpg" alt="Manuel Rosa" class="about__image" />
+              <figcaption class="about__image__caption">Manny, builder of useful things</figcaption>
+            </figure>
+          </div>
+
+          <div class="about__skills reveal">
+            <h3 class="about__skills__title">The toolkit</h3>
+            <div class="about__skill__wrapper">
+              <figure class="about__skill glass"
+                data-tooltip="Used for data analysis with Pandas and NumPy, and for web scraping with Beautiful Soup.">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python logo"
+                  class="about__skill__img" />
+                <span class="about__skill__name">Python</span>
+              </figure>
+              <figure class="about__skill glass"
+                data-tooltip="Experience with complex queries, joins, and subqueries to analyze data from relational databases.">
+                <img src="https://db.cs.uni-tuebingen.de/teaching/ws2223/sql-is-a-programming-language/logo.svg"
+                  alt="SQL logo" class="about__skill__img" />
+                <span class="about__skill__name">SQL</span>
+              </figure>
+              <figure class="about__skill glass"
+                data-tooltip="Proficient in semantic HTML5 for building well-structured and accessible web pages.">
+                <img src="assets/HTML5_Logo.svg" alt="HTML logo" class="about__skill__img" />
+                <span class="about__skill__name">HTML</span>
+              </figure>
+              <figure class="about__skill glass"
+                data-tooltip="Skilled in modern CSS, including Flexbox, Grid, and responsive design techniques.">
+                <img src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png" alt="CSS logo"
+                  class="about__skill__img" />
+                <span class="about__skill__name">CSS</span>
+              </figure>
+              <figure class="about__skill glass"
+                data-tooltip="Experience with ES6+ features, DOM manipulation, and asynchronous programming.">
+                <img src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png" alt="JavaScript logo"
+                  class="about__skill__img" />
+                <span class="about__skill__name">JavaScript</span>
+              </figure>
+              <figure class="about__skill glass"
+                data-tooltip="Built dynamic and interactive user interfaces with React, including component-based architecture and state management.">
+                <img src="https://cdn.iconscout.com/icon/free/png-256/react-3-1175109.png" alt="React logo"
+                  class="about__skill__img" />
+                <span class="about__skill__name">React</span>
+              </figure>
+              <figure class="about__skill glass" data-tooltip="Experience building and managing websites with WordPress.">
+                <img src="assets/WordPress_blue_logo.svg.png" alt="WordPress logo" class="about__skill__img" />
+                <span class="about__skill__name">WordPress</span>
+              </figure>
+              <figure class="about__skill glass" data-tooltip="Experience designing and developing websites with Webflow.">
+                <img src="assets/webflow-icon.webp" alt="Webflow logo" class="about__skill__img" />
+                <span class="about__skill__name">Webflow</span>
+              </figure>
+              <figure class="about__skill glass"
+                data-tooltip="Used Firebase for authentication and as a real-time database for web applications.">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Touchicon-180.png" alt="Firebase logo"
+                  class="about__skill__img" />
+                <span class="about__skill__name">Firebase</span>
+              </figure>
+              <figure class="about__skill glass"
+                data-tooltip="Created interactive and insightful dashboards to visualize and analyze business data.">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI logo"
+                  class="about__skill__img" />
+                <span class="about__skill__name">PowerBI</span>
+              </figure>
             </div>
           </div>
-          <figure class="about__image__wrapper">
-            <img src="assets/selfie.jpg" alt="" class="about__image" />
-          </figure>
+
+          <div class="value__grid">
+            <div class="value__card glass-card glass reveal" style="--d: 0ms">
+              <div class="value__icon"><i class="fa-solid fa-briefcase"></i></div>
+              <h3 class="value__title">Business-first building</h3>
+              <p class="value__para">
+                I start with the business problem, not the tech stack. The best
+                feedback I've gotten: a customer walked into my client's store asking
+                about an item they saw on the inventory page I built.
+              </p>
+            </div>
+            <div class="value__card glass-card glass reveal" style="--d: 100ms">
+              <div class="value__icon"><i class="fa-solid fa-layer-group"></i></div>
+              <h3 class="value__title">Full-stack range</h3>
+              <p class="value__para">
+                From hand-coded React to WordPress and Webflow, I pick the right tool
+                for the job and the budget, and I hand off systems clients can keep
+                running themselves.
+              </p>
+            </div>
+            <div class="value__card glass-card glass reveal" style="--d: 200ms">
+              <div class="value__icon"><i class="fa-solid fa-chart-line"></i></div>
+              <h3 class="value__title">Data fluency</h3>
+              <p class="value__para">
+                SQL, Python, and Power BI mean I don't stop at the interface. I can
+                clean the data, analyze it, and turn it into dashboards that drive
+                real decisions.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- Projects -->
     <section id="projects">
-      <svg id="visual" viewBox="0 0 1200 1300" width="880" height="1200" xmlns="http://www.w3.org/2000/svg"
-        version="1.1" class="blob blob-project">
-        <g transform="translate(927.4519875387796 -111.9512848530959)">
-          <path
-            d="M648.8 -752.4C919.6 -545.9 1272.3 -416.2 1356.5 -200.5C1440.7 15.3 1256.4 317.2 1074.3 608.8C892.3 900.4 712.4 1181.7 443.3 1327C174.2 1472.2 -184.1 1481.3 -364.5 1290.3C-544.9 1099.4 -547.4 708.5 -624.9 430.5C-702.4 152.5 -854.9 -12.6 -829.6 -144.5C-804.2 -276.4 -601 -375.2 -433.1 -599.8C-265.2 -824.3 -132.6 -1174.7 28.2 -1208.3C189 -1241.9 378 -958.8 648.8 -752.4"
-            fill="#000000"></path>
-        </g>
-      </svg>
-      <svg id="visual" viewBox="0 0 1200 1300" width="880" height="1200" xmlns="http://www.w3.org/2000/svg"
-        version="1.1" class="blob blob-project2">
-        <g transform="translate(927.4519875387796 -111.9512848530959)">
-          <path
-            d="M648.8 -752.4C919.6 -545.9 1272.3 -416.2 1356.5 -200.5C1440.7 15.3 1256.4 317.2 1074.3 608.8C892.3 900.4 712.4 1181.7 443.3 1327C174.2 1472.2 -184.1 1481.3 -364.5 1290.3C-544.9 1099.4 -547.4 708.5 -624.9 430.5C-702.4 152.5 -854.9 -12.6 -829.6 -144.5C-804.2 -276.4 -601 -375.2 -433.1 -599.8C-265.2 -824.3 -132.6 -1174.7 28.2 -1208.3C189 -1241.9 378 -958.8 648.8 -752.4"
-            fill="#000000"></path>
-        </g>
-      </svg>
       <div class="container">
         <div class="row projects__row">
-          <h2 class="projects__title">Projects</h2>
-          <div class="project-filter">
-            <button class="project-filter__button active" onclick="filterProjects('all')" data-filter="all">All</button>
-            <button class="project-filter__button" onclick="filterProjects('data')" data-filter="data">Data
-              Projects</button>
-            <button class="project-filter__button" onclick="filterProjects('frontend')" data-filter="frontend">Frontend
-              Projects</button>
+          <div class="section__head reveal">
+            <span class="section__eyebrow">Selected Work</span>
+            <h2 class="section__title">Real projects, real outcomes</h2>
           </div>
-          <div class="project project--buy3get1 fade-in" data-category="frontend">
+          <div class="project-filter glass reveal">
+            <button class="project-filter__button active" onclick="filterProjects('all')" data-filter="all">All</button>
+            <button class="project-filter__button" onclick="filterProjects('product')"
+              data-filter="product">AI Product</button>
+            <button class="project-filter__button" onclick="filterProjects('data')" data-filter="data">Data</button>
+            <button class="project-filter__button" onclick="filterProjects('frontend')"
+              data-filter="frontend">Frontend</button>
+          </div>
+
+          <div class="project glass-card glass reveal" data-category="product">
             <figure class="project__image__wrapper">
-              <img src="assets/freelance1.png" alt="" class="project__image" />
+              <img src="assets/ss.png"
+                alt="Resumaker landing page: tailored resumes in seconds" class="project__image" />
               <div class="project__image__links">
-                <a href="https://freelance1-nu.vercel.app/" target="_blank" class="project__image__link"><i
+                <a href="https://www.officialresumaker.com" target="_blank" class="project__image__link glass"><i
                     class="fa-solid fa-up-right-from-square"></i></a>
-                <a href="https://github.com/mannyrosajr/freelance1" target="_blank" class="project__image__link"><i
+                <a href="https://github.com/mannyrosajr/resumaker" target="_blank" class="project__image__link glass"><i
                     class="fa-brands fa-github"></i></a>
               </div>
             </figure>
             <div class="project__description">
-              <h3 class="project__title">
-                Buy3Get1: Scraping. SEO. WordPress. (Freelance)
-              </h3>
+              <span class="project__tag">AI Product · Chrome Extension</span>
+              <h3 class="project__title">Resumaker: AI-Tailored Resumes in One Click</h3>
               <div class="project__skills">
-                <div class="project__skill">WordPress</div>
-                <div class="project__skill">CSS</div>
-                <div class="project__skill">Web Scrape</div>
-                <div class="project__skill">Excel</div>
-                <div class="project__skill">Yoast SEO</div>
-                <div class="project__skill">Data Cleaning</div>
-                <div class="project__skill">Communication</div>
+                <div class="project__skill glass">Chrome MV3</div>
+                <div class="project__skill glass">JavaScript</div>
+                <div class="project__skill glass">Firebase</div>
+                <div class="project__skill glass">Cloud Functions</div>
+                <div class="project__skill glass">Claude AI</div>
+                <div class="project__skill glass">Subscriptions</div>
               </div>
               <p class="project__para">
-                Freelance web project for a Cleveland-based business that
-                sells used restaurant and general merchandise. When I joined,
-                their website had no inventory page, no SEO structure, and no
-                system in place for organizing products. I came in with zero
-                experience using WordPress — but by the end, I had built a
-                fully functional product system, implemented SEO best
-                practices, and even created tools the client could continue
-                using after handoff. I scraped and imported hundreds of
-                listings from Facebook Marketplace, designed a clean UI using
-                WordPress and Elementor, and set up an SEO foundation using
-                Yoast. I also built a reusable spreadsheet template so the
-                business could keep uploading and managing their products
-                internally. One of the most rewarding moments was when the
-                client told me a customer had come into the store and asked
-                about a specific item they had seen on the new inventory page.
-                That’s the kind of real-world impact I aim for with every
-                project.
+                Detects the job posting you're viewing and generates a tailored,
+                ATS-friendly one-page resume with AI, right in the popup. Built
+                solo, end to end: OAuth sign-in, a Firebase backend that keeps AI
+                keys server-side, PDF export, and subscription billing with free,
+                Plus, and Pro tiers. A complete SaaS, shipped from idea to the
+                Chrome Web Store.
               </p>
               <div class="project__links">
-                <a href="https://freelance1-nu.vercel.app/" class="project__link" target="_blank"><span>Live
-                    Link</span><i class="fa-solid fa-up-right-from-square"></i></a>
-                <a href="https://github.com/mannyrosajr/freelance1" class="project__link"
+                <a href="https://www.officialresumaker.com" class="btn btn--primary btn--sm"
+                  target="_blank"><span>Visit Site</span><i class="fa-solid fa-up-right-from-square"></i></a>
+                <a href="https://github.com/mannyrosajr/resumaker" class="btn btn--glass btn--sm glass"
                   target="_blank"><span>Code</span><i class="fa-brands fa-github"></i>
                 </a>
               </div>
             </div>
           </div>
 
-          <div class="project project--buy3get1 fade-in" data-category="data">
+          <div class="project glass-card glass reveal" data-category="frontend">
             <figure class="project__image__wrapper">
-              <img src="assets/intel-project.png" alt="" class="project__image" />
+              <img src="assets/freelance1.png" alt="Buy3Get1 website screenshot" class="project__image" />
               <div class="project__image__links">
-                <a href="https://intel-sql-project-3vjqcwdf0-mannyrosas-projects.vercel.app/" target="_blank"
-                  class="project__image__link"><i class="fa-solid fa-up-right-from-square"></i></a>
-                <a href="https://github.com/mannyrosajr/intel-sql-project" target="_blank"
-                  class="project__image__link"><i class="fa-brands fa-github"></i></a>
+                <a href="https://freelance1-nu.vercel.app/" target="_blank" class="project__image__link glass"><i
+                    class="fa-solid fa-up-right-from-square"></i></a>
+                <a href="https://github.com/mannyrosajr/freelance1" target="_blank" class="project__image__link glass"><i
+                    class="fa-brands fa-github"></i></a>
               </div>
             </figure>
             <div class="project__description">
-              <h3 class="project__title">
-                Intel Sustainability Project (SQL)
-              </h3>
+              <span class="project__tag">Freelance · WordPress</span>
+              <h3 class="project__title">Buy3Get1: Inventory, SEO &amp; WordPress</h3>
               <div class="project__skills">
-                <div class="project__skill">SQL</div>
-                <div class="project__skill">HTML</div>
-                <div class="project__skill">CSS</div>
+                <div class="project__skill glass">WordPress</div>
+                <div class="project__skill glass">CSS</div>
+                <div class="project__skill glass">Web Scrape</div>
+                <div class="project__skill glass">Excel</div>
+                <div class="project__skill glass">Yoast SEO</div>
+                <div class="project__skill glass">Data Cleaning</div>
               </div>
               <p class="project__para">
-                Used SQL to analyze Intel’s repurposed device data and uncover
-                trends in energy savings and carbon reduction. Explored how
-                device age, type, and region impact sustainability. Delivered
-                actionable insights to improve Intel’s environmental strategy.
+                A Cleveland reseller had no inventory page, no SEO, and no product
+                system. I scraped hundreds of Facebook Marketplace listings, built a
+                clean WordPress storefront with Elementor and Yoast SEO, and left the
+                client a reusable spreadsheet system to manage products themselves.
+                Soon after launch, a customer walked into the store asking about an
+                item they'd seen on the new inventory page.
               </p>
               <div class="project__links">
-                <a href="https://intel-sql-project-3vjqcwdf0-mannyrosas-projects.vercel.app/" class="project__link"
-                  target="_blank"><span>Live Link</span><i class="fa-solid fa-up-right-from-square"></i></a>
-                <a href="https://github.com/mannyrosajr/intel-sql-project" class="project__link"
+                <a href="https://freelance1-nu.vercel.app/" class="btn btn--primary btn--sm" target="_blank">
+                  <span>Live Link</span><i class="fa-solid fa-up-right-from-square"></i></a>
+                <a href="https://github.com/mannyrosajr/freelance1" class="btn btn--glass btn--sm glass"
                   target="_blank"><span>Code</span><i class="fa-brands fa-github"></i>
                 </a>
               </div>
             </div>
           </div>
-          <div class="project project--buy3get1 fade-in" data-category="data">
+
+          <div class="project glass-card glass reveal" data-category="data">
             <figure class="project__image__wrapper">
-              <img src="assets/PowerBI.png" alt="" class="project__image" />
+              <img src="assets/intel-project.png" alt="Intel sustainability project screenshot" class="project__image" />
+              <div class="project__image__links">
+                <a href="https://intel-sql-project-3vjqcwdf0-mannyrosas-projects.vercel.app/" target="_blank"
+                  class="project__image__link glass"><i class="fa-solid fa-up-right-from-square"></i></a>
+                <a href="https://github.com/mannyrosajr/intel-sql-project" target="_blank"
+                  class="project__image__link glass"><i class="fa-brands fa-github"></i></a>
+              </div>
+            </figure>
+            <div class="project__description">
+              <span class="project__tag">Data Analysis · SQL</span>
+              <h3 class="project__title">Intel Sustainability Project</h3>
+              <div class="project__skills">
+                <div class="project__skill glass">SQL</div>
+                <div class="project__skill glass">HTML</div>
+                <div class="project__skill glass">CSS</div>
+              </div>
+              <p class="project__para">
+                Used SQL to analyze Intel's repurposed device data and uncover
+                trends in energy savings and carbon reduction. Explored how
+                device age, type, and region impact sustainability. Delivered
+                actionable insights to improve Intel's environmental strategy.
+              </p>
+              <div class="project__links">
+                <a href="https://intel-sql-project-3vjqcwdf0-mannyrosas-projects.vercel.app/"
+                  class="btn btn--primary btn--sm" target="_blank"><span>Live Link</span><i
+                    class="fa-solid fa-up-right-from-square"></i></a>
+                <a href="https://github.com/mannyrosajr/intel-sql-project" class="btn btn--glass btn--sm glass"
+                  target="_blank"><span>Code</span><i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project glass-card glass reveal" data-category="data">
+            <figure class="project__image__wrapper">
+              <img src="assets/PowerBI.png" alt="Power BI dashboard screenshot" class="project__image" />
               <div class="project__image__links">
                 <a href="https://drive.google.com/file/d/13m16di_2FrXWqNkW9oRvgFkYm63DEBJO/view?usp=sharing"
-                  target="_blank" class="project__image__link"><i class="fa-solid fa-up-right-from-square"></i></a>
-                <a href="https://github.com/mannyrosajr/PowerBIproject" target="_blank" class="project__image__link"><i
+                  target="_blank" class="project__image__link glass"><i class="fa-solid fa-up-right-from-square"></i></a>
+                <a href="https://github.com/mannyrosajr/PowerBIproject" target="_blank" class="project__image__link glass"><i
                     class="fa-brands fa-github"></i></a>
               </div>
             </figure>
             <div class="project__description">
+              <span class="project__tag">Data Viz · Power BI</span>
               <h3 class="project__title">Data Job Survey Dashboard</h3>
               <div class="project__skills">
-                <div class="project__skill">PowerBI</div>
-                <div class="project__skill">Excel</div>
-                <div class="project__skill">Data Cleaning</div>
-                <div class="project__skill">Data Analysis</div>
+                <div class="project__skill glass">PowerBI</div>
+                <div class="project__skill glass">Excel</div>
+                <div class="project__skill glass">Data Cleaning</div>
+                <div class="project__skill glass">Data Analysis</div>
               </div>
               <p class="project__para">
                 An interactive Power BI dashboard analyzing global survey
@@ -337,30 +494,33 @@
               </p>
               <div class="project__links">
                 <a href="https://drive.google.com/file/d/13m16di_2FrXWqNkW9oRvgFkYm63DEBJO/view?usp=sharing"
-                  class="project__link"><span>Download Link</span></i></a>
-                <a href="https://github.com/mannyrosajr/PowerBIproject" class="project__link"><span>Github</span><i
-                    class="fa-brands fa-github"></i>
+                  class="btn btn--primary btn--sm" target="_blank"><span>Download</span><i
+                    class="fa-solid fa-download"></i></a>
+                <a href="https://github.com/mannyrosajr/PowerBIproject" class="btn btn--glass btn--sm glass"
+                  target="_blank"><span>Github</span><i class="fa-brands fa-github"></i>
                 </a>
               </div>
             </div>
           </div>
-          <div class="project project--buy3get1 fade-in" data-category="frontend">
+
+          <div class="project glass-card glass reveal" data-category="frontend">
             <figure class="project__image__wrapper">
-              <img src="assets/React-project1.png" alt="" class="project__image" />
+              <img src="assets/React-project1.png" alt="Car rental landing page screenshot" class="project__image" />
               <div class="project__image__links">
-                <a href="https://react-car-rental-woad.vercel.app/" target="_blank" class="project__image__link"><i
+                <a href="https://react-car-rental-woad.vercel.app/" target="_blank" class="project__image__link glass"><i
                     class="fa-solid fa-up-right-from-square"></i></a>
                 <a href="https://github.com/mannyrosajr/react-car-rental" target="_blank"
-                  class="project__image__link"><i class="fa-brands fa-github"></i></a>
+                  class="project__image__link glass"><i class="fa-brands fa-github"></i></a>
               </div>
             </figure>
             <div class="project__description">
-              <h3 class="project__title">Car Rental Landing Page (React)</h3>
+              <span class="project__tag">Frontend · React</span>
+              <h3 class="project__title">Car Rental Landing Page</h3>
               <div class="project__skills">
-                <div class="project__skill">HTML</div>
-                <div class="project__skill">CSS</div>
-                <div class="project__skill">JavaScript</div>
-                <div class="project__skill">React</div>
+                <div class="project__skill glass">HTML</div>
+                <div class="project__skill glass">CSS</div>
+                <div class="project__skill glass">JavaScript</div>
+                <div class="project__skill glass">React</div>
               </div>
               <p class="project__para">
                 A modern, responsive car rental landing page built with React,
@@ -370,10 +530,10 @@
                 interactions and a polished front-end design.
               </p>
               <div class="project__links">
-                <a href="https://react-car-rental-woad.vercel.app/" class="project__link"><span>Live Link</span><i
-                    class="fa-solid fa-up-right-from-square"></i></a>
-                <a href="https://github.com/mannyrosajr/react-car-rental" class="project__link"><span>Code</span><i
-                    class="fa-brands fa-github"></i>
+                <a href="https://react-car-rental-woad.vercel.app/" class="btn btn--primary btn--sm"
+                  target="_blank"><span>Live Link</span><i class="fa-solid fa-up-right-from-square"></i></a>
+                <a href="https://github.com/mannyrosajr/react-car-rental" class="btn btn--glass btn--sm glass"
+                  target="_blank"><span>Code</span><i class="fa-brands fa-github"></i>
                 </a>
               </div>
             </div>
@@ -381,100 +541,111 @@
         </div>
       </div>
     </section>
+
+    <!-- Gallery -->
     <section id="gallery">
-      <div class="container">
+      <div class="container container--gallery">
         <div class="row">
-          <h2 class="gallery__title">Photo Gallery</h2>
-          <p class="gallery__subtitle">A look into my personal life</p>
+          <div class="section__head reveal">
+            <span class="section__eyebrow">Beyond the code</span>
+            <h2 class="section__title">A look into my life</h2>
+          </div>
         </div>
       </div>
-      <div class="gallery-river">
+      <div class="gallery-river reveal">
         <div class="gallery-track">
-          <figure class="gallery-item">
-            <img src="assets/graduation.jpg" alt="Accomplishment 1" />
+          <figure class="gallery-item glass">
+            <img src="assets/graduation.jpg" alt="Graduation photo" />
             <figcaption>I Graduated from The University of Cincinnati!</figcaption>
           </figure>
-          <figure class="gallery-item">
-            <img src="assets/walking.jpeg" alt="Personal photo" />
+          <figure class="gallery-item glass">
+            <img src="assets/walking.jpeg" alt="Walking at graduation ceremony" />
             <figcaption>Getting my Name Called at my Graduation Ceremony.</figcaption>
           </figure>
-          <figure class="gallery-item">
-            <img src="assets/meandgf.jpeg" alt="Accomplishment 2" />
+          <figure class="gallery-item glass">
+            <img src="assets/meandgf.jpeg" alt="Me and my girlfriend" />
             <figcaption>Me and my Girlfriend, Maria!</figcaption>
           </figure>
-          <figure class="gallery-item">
-            <img src="assets/setup.jpeg" alt="Accomplishment 3" />
+          <figure class="gallery-item glass">
+            <img src="assets/setup.jpeg" alt="Home office setup" />
             <figcaption>My Home Office Setup.</figcaption>
           </figure>
-          <figure class="gallery-item">
-            <img src="assets/cats.jpeg" alt="Accomplishment 4" />
+          <figure class="gallery-item glass">
+            <img src="assets/cats.jpeg" alt="My cats" />
             <figcaption>My Cats! Mazzy and Milo</figcaption>
           </figure>
-          <figure class="gallery-item">
-            <img src="assets/view.jpeg" alt="Accomplishment 4" />
+          <figure class="gallery-item glass">
+            <img src="assets/view.jpeg" alt="View of Cincinnati" />
             <figcaption>One of my favorite views from Cincinnati.</figcaption>
           </figure>
           <!-- Duplicate images for seamless loop -->
-          <figure class="gallery-item">
-            <img src="assets/graduation.jpg" alt="Accomplishment 1" />
+          <figure class="gallery-item glass">
+            <img src="assets/graduation.jpg" alt="Graduation photo" />
             <figcaption>I Graduated from The University of Cincinnati!</figcaption>
           </figure>
-          <figure class="gallery-item">
-            <img src="assets/walking.jpeg" alt="Personal photo" />
+          <figure class="gallery-item glass">
+            <img src="assets/walking.jpeg" alt="Walking at graduation ceremony" />
             <figcaption>Getting my Name Called at my Graduation Ceremony.</figcaption>
           </figure>
-          <figure class="gallery-item">
-            <img src="assets/meandgf.jpeg" alt="Accomplishment 2" />
+          <figure class="gallery-item glass">
+            <img src="assets/meandgf.jpeg" alt="Me and my girlfriend" />
             <figcaption>Me and my Girlfriend, Maria!</figcaption>
           </figure>
-          <figure class="gallery-item">
-            <img src="assets/setup.jpeg" alt="Accomplishment 3" />
+          <figure class="gallery-item glass">
+            <img src="assets/setup.jpeg" alt="Home office setup" />
             <figcaption>My Home Office Setup.</figcaption>
           </figure>
-          <figure class="gallery-item">
-            <img src="assets/cats.jpeg" alt="Accomplishment 4" />
+          <figure class="gallery-item glass">
+            <img src="assets/cats.jpeg" alt="My cats" />
             <figcaption>My Cats! Mazzy and Milo</figcaption>
           </figure>
-          <figure class="gallery-item">
-            <img src="assets/view.jpeg" alt="Accomplishment 4" />
+          <figure class="gallery-item glass">
+            <img src="assets/view.jpeg" alt="View of Cincinnati" />
             <figcaption>One of my favorite views from Cincinnati.</figcaption>
           </figure>
         </div>
       </div>
     </section>
+
+    <!-- Contact -->
     <section id="contact">
       <div class="container">
-        <div class="row contact__row">
-          <div class="contact__description">
-            <h2 class="contact__title">Contact</h2>
-            <h3 class="contact__subtitle">Ready to build something great?</h3>
-            <p class="contact__para">
-              If you have any opprotunities, ideas, or questions you want to
-              throw my way, don't hesitate to message me!
-            </p>
-            <a href="mailto: me@rosafi.io" class="contact__link"><i class="fa-solid fa-envelope"></i>
-              <span>me@rosafi.io</span></a>
-          </div>
-          <form action="#" class="contact__form" onsubmit="sendEmail(event)">
-            <div class="form__item">
-              <label class="form__item__label">Name</label>
-              <input type="text" name="name" required class="form__item__input" />
-            </div>
-            <div class="form__item">
-              <label class="form__item__label">Email</label>
-              <input type="email" name="email" required class="form__item__input" />
-            </div>
-            <div class="form__item">
-              <label for="" class="form__item__label">Message</label>
-              <textarea required name="message" class="form__item__textarea"></textarea>
-            </div>
-            <button class="contact__form__submit">
-              Send
-              <div class="contact__form__loading hidden">
-                <i class="fa-solid fa-spinner contact__form__loading__icon"></i>
+        <div class="row">
+          <div class="contact__panel glass-card glass reveal">
+            <div class="contact__row">
+              <div class="contact__description">
+                <span class="section__eyebrow">Contact</span>
+                <h2 class="contact__subtitle">Ready to build<br />something great?</h2>
+                <p class="contact__para">
+                  If you have any opportunities, ideas, or questions you want to
+                  throw my way, don't hesitate to message me!
+                </p>
+                <a href="mailto:me@rosafi.io" class="contact__link glass"><i class="fa-solid fa-envelope"></i>
+                  <span>me@rosafi.io</span></a>
               </div>
-            </button>
-          </form>
+              <form action="#" class="contact__form" onsubmit="sendEmail(event)">
+                <div class="form__item">
+                  <label class="form__item__label">Name</label>
+                  <input type="text" name="name" required class="form__item__input" placeholder="Your name" />
+                </div>
+                <div class="form__item">
+                  <label class="form__item__label">Email</label>
+                  <input type="email" name="email" required class="form__item__input" placeholder="you@example.com" />
+                </div>
+                <div class="form__item">
+                  <label class="form__item__label">Message</label>
+                  <textarea required name="message" class="form__item__textarea"
+                    placeholder="Tell me about your project…"></textarea>
+                </div>
+                <button class="btn btn--primary contact__form__submit">
+                  Send Message <i class="fa-solid fa-paper-plane"></i>
+                  <div class="contact__form__loading hidden">
+                    <i class="fa-solid fa-spinner contact__form__loading__icon"></i>
+                  </div>
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -482,22 +653,61 @@
 
   <footer>
     <div class="row footer__row">
-      <span class="footer__copyright">Copyright © 2026. All rights reserved
-      </span>
+      <span class="footer__copyright">© 2026 Manuel Rosa · Designed &amp; built with care</span>
       <div class="footer__links">
-        <a href="https://www.linkedin.com/in/manuelrosajr/" class="footer__link" target="_blank">
-          <i class="fa-brands fa-linkedin"></i>
+        <a href="https://www.linkedin.com/in/manuelrosajr/" class="footer__link" target="_blank" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin-in"></i>
         </a>
-        <a href="https://github.com/mannyrosajr" class="footer__link" target="_blank">
-          <i class="fa-brands fa-square-github"></i>
+        <a href="https://github.com/mannyrosajr" class="footer__link" target="_blank" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
         </a>
-        <a href="https://www.linkedin.com/in/manuelrosajr/" class="footer__link" target="_blank">
+        <a href="https://www.linkedin.com/in/manuelrosajr/" class="footer__link" target="_blank" aria-label="Resume">
           <i class="fa-solid fa-file-pdf"></i>
         </a>
       </div>
     </div>
   </footer>
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Command palette -->
+  <div class="palette__wrapper" id="palette" role="dialog" aria-modal="true" aria-label="Command palette">
+    <div class="palette glass">
+      <div class="palette__search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="palette-input" class="palette__input" placeholder="Type a command or search…"
+          autocomplete="off" spellcheck="false" />
+        <kbd class="palette__kbd">esc</kbd>
+      </div>
+      <div class="palette__list" id="palette-list"></div>
+      <div class="palette__footer">
+        <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span>
+        <span><kbd>↵</kbd> select</span>
+        <span><kbd>esc</kbd> close</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gallery lightbox -->
+  <div class="lightbox__wrapper" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button class="lightbox__btn lightbox__close glass" onclick="closeLightbox()" aria-label="Close photo">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <button class="lightbox__btn lightbox__prev glass" onclick="stepLightbox(-1)" aria-label="Previous photo">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <button class="lightbox__btn lightbox__next glass" onclick="stepLightbox(1)" aria-label="Next photo">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+    <figure class="lightbox">
+      <img src="" alt="" class="lightbox__img" id="lightbox-img" />
+      <figcaption class="lightbox__caption glass" id="lightbox-caption"></figcaption>
+    </figure>
+  </div>
+
+  <!-- Back to top -->
+  <button class="to-top glass" id="to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+    aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
 </body>
 
 </html>
