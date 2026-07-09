@@ -244,8 +244,8 @@ function initActiveNavLinks() {
 
 const ROLES = [
   "Full-Stack Developer",
-  "Data-Driven Builder",
-  "Low-Code Automator",
+  "Data Analyst",
+  "Low-Code Builder",
   "Problem Solver",
 ];
 
