@@ -216,7 +216,7 @@ function initNavScroll() {
 
 function initActiveNavLinks() {
   const links = document.querySelectorAll(".nav__link");
-  const sections = ["home", "about", "projects", "gallery", "contact"]
+  const sections = ["home", "about", "experience", "projects", "gallery", "contact"]
     .map((id) => document.getElementById(id))
     .filter(Boolean);
 
@@ -568,6 +568,7 @@ function initParallax() {
 const PALETTE_ACTIONS = [
   { group: "Navigate", icon: "fa-solid fa-house", label: "Go to Home", hint: "#home", run: () => scrollToSection("home") },
   { group: "Navigate", icon: "fa-solid fa-user", label: "Go to About", hint: "#about", run: () => scrollToSection("about") },
+  { group: "Navigate", icon: "fa-solid fa-route", label: "Go to Experience", hint: "#experience", run: () => scrollToSection("experience") },
   { group: "Navigate", icon: "fa-solid fa-briefcase", label: "Go to Work", hint: "#projects", run: () => scrollToSection("projects") },
   { group: "Navigate", icon: "fa-solid fa-camera", label: "Go to Life", hint: "#gallery", run: () => scrollToSection("gallery") },
   { group: "Navigate", icon: "fa-solid fa-envelope", label: "Go to Contact", hint: "#contact", run: () => scrollToSection("contact") },
