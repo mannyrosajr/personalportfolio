@@ -243,10 +243,10 @@ function initActiveNavLinks() {
    ========================================================================== */
 
 const ROLES = [
-  "Full-Stack Developer",
+  "Business-First Builder",
   "Data Analyst",
+  "AI Product Builder",
   "Low-Code Builder",
-  "Problem Solver",
 ];
 
 function initRoleTyping() {
